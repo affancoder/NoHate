@@ -28,11 +28,11 @@ Here’s an attractive **README.md** for your *nohate.in* project:
 
 ## 🏗 **Tech Stack Used**  
 
-🔹 **Frontend**: HTML, CSS, JavaScript, React.js  
+🔹 **Frontend**: HTML, CSS, JavaScript
 🔹 **Backend**: Node.js, Express.js  
 🔹 **Database**: MongoDB  
 🔹 **Authentication**: JWT / OAuth  
-🔹 **Hosting**: Vercel / Netlify / Heroku  
+🔹 **Hosting**: Vercel
 
 ---
 
