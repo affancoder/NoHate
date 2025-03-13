@@ -1,7 +1,3 @@
-Here’s an attractive **README.md** for your *nohate.in* project:  
-
----
-
 # 🛑 **nohate.in** – Say No to Communal Hate 🚫  
 
 **🌏 A Mission Against Religious Hate & Social Media Toxicity**  
