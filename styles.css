@@ -1,0 +1,389 @@
+#logo {
+  width: 40px;
+  border-radius: 50%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 0 10%;
+  background: white;
+  /* background-color: rgb(253, 86, 86); */
+  background-image: url(/assets/right_side_img.jpg) !important;
+  background-position: cover;
+  overflow: hidden;
+}
+
+.hero-text {
+  max-width: 50%;
+  font-size: 2.5rem;
+  font-weight: bold;
+  /* color: #333; */
+  color: white;
+}
+
+.running-text-container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-top: 10px;
+}
+
+.running-text {
+  display: inline-block;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.hero-img img {
+  max-width: 450px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Feature */
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px 10%;
+  background: #f8f9fa;
+  cursor: pointer;
+}
+
+.feature-box {
+  text-align: center;
+  width: 30%;
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.feature-box img {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-box p {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.feature-box:hover {
+  transform: translateY(-10px);
+}
+
+.cta {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: red;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.section {
+  padding: 50px 10%;
+  text-align: center;
+}
+.section h2 {
+  margin-bottom: 20px;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.box {
+  flex: 1;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* General Section Styling */
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  padding: 20px;
+}
+
+/* Form Styling */
+.contact-form {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Label Styling */
+.contact-form label {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+/* Input & Textarea Styling */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s ease-in-out;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Textarea */
+.contact-form textarea {
+  height: 120px;
+  resize: none;
+}
+
+/* Button Styling */
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  background: #ff4b5c;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: #ff2e44;
+  transform: translateY(-2px);
+}
+
+.faq-heading {
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  background: linear-gradient(90deg, #ff416c, #ff4b2b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 0;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Add an icon effect */
+.faq-heading i {
+  font-size: 40px;
+  color: #ff4b2b;
+  animation: bounce 1.5s infinite alternate;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Bounce animation for the icon */
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-8px);
+  }
+}
+
+/* Footer */
+
+.footer {
+  background: #333;
+  color: white;
+  padding: 40px 10%;
+  text-align: center;
+}
+.footer .flex {
+  justify-content: center;
+}
+.footer .box {
+  background: none;
+  box-shadow: none;
+  color: white;
+}
+.footer a {
+  color: lightgray;
+  text-decoration: none;
+}
+.footer a:hover {
+  color: white;
+}
+
+/* Style for the Scroll to Top button */
+#scrollToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.4s, transform 0.4s, background 0.3s;
+}
+
+/* Hover Effect */
+#scrollToTop:hover {
+  background: linear-gradient(135deg, #ff2e63, #ff7b00);
+  box-shadow: 0 6px 15px rgba(255, 79, 79, 0.5);
+}
+
+/* Show button when scrolling */
+#scrollToTop.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Button Click Animation */
+#scrollToTop:active {
+  transform: scale(0.9);
+}
+
+/* Button Styling */
+.ai-robo-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #4a90e2, #9013fe);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon Styling */
+.ai-robo-btn i {
+  font-size: 22px;
+  animation: roboMove 1.5s infinite alternate;
+}
+
+/* Hover Effect */
+.ai-robo-btn:hover {
+  background: linear-gradient(135deg, #9013fe, #4a90e2);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(144, 19, 254, 0.5);
+}
+
+/* Click Effect */
+.ai-robo-btn:active {
+  transform: scale(0.95);
+}
+
+/* Robot Icon Animation */
+@keyframes roboMove {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-3px);
+  }
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    width: 100%;
+    display: block;
+    overflow-x: hidden;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    height: 600px;
+  }
+  .hero-text {
+    margin-top: 150px;
+    max-width: 100%;
+    font-size: 2rem;
+  }
+  .hero-img {
+    /* margin-top: 20px; */
+    margin-bottom: 15rem;
+  }
+
+  .features {
+    flex-direction: column;
+    text-align: center;
+  }
+  .feature-box {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .flex {
+    flex-direction: column;
+    align-items: center;
+  }
+}
