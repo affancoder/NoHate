@@ -340,6 +340,12 @@
   transform: scale(0.95);
 }
 
+.section a {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+}
+
 /* Robot Icon Animation */
 @keyframes roboMove {
   from {
