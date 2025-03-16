@@ -162,11 +162,29 @@
     <section class="section">
       <h2>संसाधन और ब्लॉग</h2>
       <p>शैक्षिक सामग्री और धार्मिक सहिष्णुता पर मार्गदर्शिकाएँ उपलब्ध हैं।</p>
-      <br>
-      <a href="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/03/13/10/20250313103719-9AWTDH8A.json"><button class="ai-robo-btn">
-        <i class="fa-solid fa-robot"></i> AI Assistant
-      </button></a>
+      <br />
+      <a
+        href="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/03/13/10/20250313103719-9AWTDH8A.json"
+        ><button class="ai-robo-btn">
+          <i class="fa-solid fa-robot"></i> AI Assistant
+        </button></a
+      >
     </section>
+
+    <!-- Safe Comment checker -->
+    <div class="commentcontainer">
+      <div class="comment-box">
+        <h2>Comment Checker</h2>
+        <textarea
+          id="commentInput"
+          class="comment-input"
+          rows="5"
+          placeholder="Write your comment..."
+        ></textarea>
+        <button class="comment-submit" onclick="checkComment()">Submit</button>
+        <div id="commentAlert" class="comment-alert"></div>
+      </div>
+    </div>
 
     <!-- Contact Form -->
 
@@ -210,15 +228,21 @@
           <div class="footer-box">
             <h3>हमारे बारे में</h3>
             <p>
-              Nohate.in एक समर्पित संगठन है जो समाज में जागरूकता फैलाने और सकारात्मक बदलाव लाने का प्रयास करता है। 
-              हम शिक्षा, पर्यावरण संरक्षण, और सामुदायिक सेवा में योगदान देते हैं।
+              Nohate.in एक समर्पित संगठन है जो समाज में जागरूकता फैलाने और
+              सकारात्मक बदलाव लाने का प्रयास करता है। हम शिक्षा, पर्यावरण
+              संरक्षण, और सामुदायिक सेवा में योगदान देते हैं।
             </p>
           </div>
           <div class="footer-box">
             <h3>Contact US</h3>
-            <p><i class="fa-solid fa-envelope"></i> Email: contact@nohate.org</p>
+            <p>
+              <i class="fa-solid fa-envelope"></i> Email: contact@nohate.org
+            </p>
             <p><i class="fa-solid fa-phone"></i> Phone: +91 9876543210</p>
-            <p><i class="fa-solid fa-map-marker-alt"></i> पता: 123, हरमनी मार्ग, नई दिल्ली, भारत</p>
+            <p>
+              <i class="fa-solid fa-map-marker-alt"></i> पता: 123, हरमनी मार्ग,
+              नई दिल्ली, भारत
+            </p>
           </div>
           <div class="footer-box">
             <h3>Supported Links</h3>
@@ -243,13 +267,12 @@
             </div>
           </div>
         </div>
-    
+
         <div class="footer-bottom">
           <p>&copy; 2025 HateFree. All Rights Reserved</p>
         </div>
       </div>
     </footer>
-    
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

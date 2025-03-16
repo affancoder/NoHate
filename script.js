@@ -21,7 +21,6 @@ function startRunningText() {
 
 startRunningText();
 
-
 const scrollToTopBtn = document.getElementById("scrollToTop");
 
 window.addEventListener("scroll", () => {
@@ -35,3 +34,59 @@ window.addEventListener("scroll", () => {
 scrollToTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
+// Safe Comment checker
+
+// Store banned words in local storage (only if not already set)
+if (!localStorage.getItem("bannedWordsList")) {
+  localStorage.setItem(
+    "bannedWordsList",
+    JSON.stringify([
+      "hate",
+      "violence",
+      "kill",
+      "attack",
+      "curse",
+      "racist",
+      "terrorist",
+    ])
+  );
+}
+
+function checkComment() {
+  let comment = document
+    .getElementById("commentInput")
+    .value.trim()
+    .toLowerCase();
+  let alertBox = document.getElementById("commentAlert");
+  let bannedWords = JSON.parse(localStorage.getItem("bannedWordsList"));
+
+  // Check using regex for exact word matching
+  let foundWords = bannedWords.filter((word) =>
+    new RegExp(`\\b${word}\\b`, "i").test(comment)
+  );
+
+  console.log("Found Words:", foundWords); // Debugging
+
+  if (foundWords.length > 0) {
+    alertBox.innerHTML = `⚠️ Warning! Your comment contains: <b>${foundWords.join(
+      ", "
+    )}</b>`;
+    alertBox.className = "comment-alert alert-danger";
+    alertBox.style.display = "block";
+    gsap.fromTo(
+      alertBox,
+      { opacity: 0, y: -20 },
+      { opacity: 1, y: 0, duration: 0.5, ease: "bounce" }
+    );
+  } else {
+    alertBox.innerHTML = "✅ Your comment is clean!";
+    alertBox.className = "comment-alert alert-success";
+    alertBox.style.display = "block";
+    gsap.fromTo(
+      alertBox,
+      { opacity: 0, scale: 0.5 },
+      { opacity: 1, scale: 1, duration: 0.5, ease: "elastic" }
+    );
+  }
+}
