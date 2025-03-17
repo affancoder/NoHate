@@ -98,24 +98,41 @@ document.querySelectorAll(".faq-item").forEach((item) => {
   let answer = item.querySelector(".faq-answer");
   let icon = item.querySelector(".icon");
 
-  gsap.set(answer, { height: 0, opacity: 0 });
+  gsap.set(answer, { height: 0, opacity: 0, display: "none" });
 
   question.addEventListener("click", () => {
     let isOpen = answer.style.display === "block";
 
     document.querySelectorAll(".faq-answer").forEach((ans) => {
-      gsap.to(ans, { height: 0, opacity: 0, duration: 0.4 });
-      ans.style.display = "none";
+      if (ans !== answer) {
+        gsap.to(ans, {
+          height: 0,
+          opacity: 0,
+          duration: 0.4,
+          onComplete: () => (ans.style.display = "none"),
+        });
+      }
     });
 
     document.querySelectorAll(".icon").forEach((icn) => {
-      gsap.to(icn, { rotate: 0, duration: 0.3 });
+      if (icn !== icon) {
+        gsap.to(icn, { rotate: 0, duration: 0.3 });
+      }
     });
 
     if (!isOpen) {
       answer.style.display = "block";
-      gsap.to(answer, { height: "auto", opacity: 1, duration: 0.4 });
+      let autoHeight = answer.scrollHeight; // Get actual height before animating
+      gsap.to(answer, { height: autoHeight, opacity: 1, duration: 0.4 });
       gsap.to(icon, { rotate: 45, duration: 0.3 });
+    } else {
+      gsap.to(answer, {
+        height: 0,
+        opacity: 0,
+        duration: 0.4,
+        onComplete: () => (answer.style.display = "none"),
+      });
+      gsap.to(icon, { rotate: 0, duration: 0.3 });
     }
   });
 });

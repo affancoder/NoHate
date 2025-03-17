@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
 
 #logo {
-  width: 40px;
+  width: 50px;
   border-radius: 50%;
 }
 
@@ -264,7 +264,7 @@
 .contact-form button {
   width: 100%;
   padding: 12px;
-  background: #6c63ff;
+  background: #468ead;
   border: none;
   border-radius: 5px;
   color: #ffffff;
@@ -275,7 +275,7 @@
 }
 
 .contact-form button:hover {
-  background: #564ee0;
+  background: #2d80a3;
   transform: translateY(-2px);
 }
 
@@ -295,9 +295,10 @@
 }
 
 /* Footer */
+
 .footer {
-  background: #e3f2fd;
-  color: #333;
+  background: #f8f9fa; /* Light background */
+  color: #468ead;
   padding: 50px 0;
   font-family: "Poppins", sans-serif;
   transition: background 0.3s ease-in-out;
@@ -327,15 +328,15 @@
 }
 
 .footer-box h3 {
-  color: #007bff;
+  color: #468ead;
   margin-bottom: 15px;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .footer-box p,
 .footer-box ul,
 .footer-box a {
-  color: #555;
+  color: #419ec5;
   font-size: 14px;
 }
 
@@ -350,24 +351,24 @@
 
 .footer-box ul li a {
   text-decoration: none;
-  color: #007bff;
+  color: #468ead;
   transition: color 0.3s ease-in-out;
 }
 
 .footer-box ul li a:hover {
-  color: #ff4081;
+  color: #468ead;
 }
 
 .social-links a {
   display: inline-block;
   margin-right: 12px;
-  color: #555;
+  color: #468ead;
   font-size: 18px;
   transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .social-links a:hover {
-  color: #ff4081;
+  color: #38a2cf;
   transform: scale(1.2);
 }
 
@@ -394,8 +395,9 @@
   padding-top: 20px;
   border-top: 1px solid #ddd;
   font-size: 14px;
-  color: #555;
+  color: #468ead;
 }
+
 
 /* Style for the Scroll to Top button */
 #scrollToTop {
@@ -404,7 +406,8 @@
   right: 30px;
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  /* background: linear-gradient(135deg, #ff416c, #ff4b2b); */
+  background-color: #3b7289;
   border: none;
   border-radius: 50%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -421,8 +424,8 @@
 
 /* Hover Effect */
 #scrollToTop:hover {
-  background: linear-gradient(135deg, #ff2e63, #ff7b00);
-  box-shadow: 0 6px 15px rgba(255, 79, 79, 0.5);
+  background: linear-gradient(135deg, #3b7289, #419eca);
+  box-shadow: 0 6px 15px #3b7289;
 }
 
 /* Show button when scrolling */
@@ -507,7 +510,9 @@
   font-size: 22px;
   letter-spacing: 1px;
   margin-bottom: 10px;
-  background: linear-gradient(to right, #ff8c00, #ff2a6d);
+  /* background: linear-gradient(to right, #ff8c00, #ff2a6d); */
+  background-color: #3b7289;
+  font-weight: 550;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -517,7 +522,7 @@
   width: 100%;
   padding: 12px;
   border-radius: 8px;
-  border: 2px solid saddlebrown;
+  border: 2px solid #4a7c91;
   font-size: 16px;
   outline: none;
   background: rgba(255, 255, 255, 0.2);
@@ -534,7 +539,7 @@
 /* Submit Button */
 .comment-submit {
   margin-top: 12px;
-  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  background: linear-gradient(45deg, #3b7289, #269bcd);
   color: white;
   border: none;
   padding: 12px;
@@ -545,12 +550,12 @@
   font-weight: bold;
   text-transform: uppercase;
   transition: 0.3s;
-  box-shadow: 0px 5px 15px rgba(255, 75, 75, 0.4);
+  box-shadow: 0px 5px 15px #3b7289;
 }
 
 .comment-submit:hover {
-  background: linear-gradient(45deg, #ff4b2b, #ff416c);
-  box-shadow: 0px 8px 20px rgba(255, 75, 75, 0.6);
+  background: linear-gradient(45deg, #0c6e98, #109cd8);
+  box-shadow: 0px 8px 20px lightskyblue;
   transform: scale(1.05);
 }
 
@@ -588,85 +593,39 @@
 }
 
 /* Faqs */
-
-.faqsection {
-  /* background: linear-gradient(to right, #ffecd2, #fcb69f); Soft gradient */
-  background-color: #dde1e7 !important;
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: auto;
-}
-
 .faq-section {
-  max-width: 700px;
-  background: rgba(255, 255, 255, 0.8); /* Glassmorphism effect */
-  padding: 25px;
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
+  max-width: 900px;
+  margin: 40px auto;
   text-align: center;
-  font-weight: 600;
-  color: #ff7eb3;
+}
+.faq-section h2 {
+  color: #468ead;
   margin-bottom: 20px;
 }
-
-/* FAQ Items */
 .faq-container {
-  border-top: 2px solid #ff7eb3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
-
 .faq-item {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 15px 20px;
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 10px;
-  margin-bottom: 10px;
-  transition: all 0.3s ease-in-out;
 }
-
-.faq-item:hover {
-  background: rgba(255, 255, 255, 0.9);
-}
-
-/* Question Styling */
 .faq-question {
+  font-weight: bold;
+  color: #468ead;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight: 600;
-  font-size: 18px;
-  color: #ff4081; /* Vibrant Pink */
-  color: red;
-  transition: color 0.3s;
 }
-
-.faq-item:hover .faq-question {
-  color: seagreen;
-}
-
-/* Icon Animation */
-.icon {
-  font-size: 22px;
-  color: #ff4081;
-  transition: transform 0.3s ease-in-out;
-}
-
-/* Answer Styling */
 .faq-answer {
   display: none;
-  padding-top: 10px;
-  font-size: 16px;
-  color: #444;
-  line-height: 1.5;
-  opacity: 0;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
 }
 
 @media (max-width: 768px) {
