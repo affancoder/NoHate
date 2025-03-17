@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hate Free</title>
+    <title>NoHate</title>
     <link rel="stylesheet" href="styles.css" />
     <!-- logo -->
     <link rel="shortcut icon" href="favicon.jpg" type="image/x-icon" />
@@ -29,7 +29,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
       <div class="container-fluid">
         <img src="favicon.jpg" id="logo" />
-        <a class="navbar-brand" href="#">&nbsp;HATE FREE</a>
+        <a class="navbar-brand" href="#">&nbsp;NoHate</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -100,30 +100,12 @@
 
     <!-- Feature Section -->
 
-    <section class="features">
-      <div class="feature-box">
-        <img src="/assets/feature-img1.webp" alt="Feature 1" />
-        <p>Fast & Secure Services</p>
-      </div>
-      <div class="feature-box">
-        <img src="/assets/feature-img3.webp" alt="Feature 2" />
-        <p>24/7 Customer Support</p>
-      </div>
-      <div class="feature-box">
-        <img src="/assets/feature-img2.jpg" alt="Feature 3" />
-        <p>User-Friendly Interface</p>
-      </div>
-    </section>
+    
 
     <!-- Required -->
 
     <!-- About Us -->
     <section class="section">
-      <h1 class="faq-heading">
-        <i class="fa-regular fa-clipboard"></i>&nbsp; FREQUENTLY ASKED QUESTIONS
-        (FAQS)
-      </h1>
-      <br />
       <h2>हमारे बारे में</h2>
       <p>
         हमारा संगठन धार्मिक नफरत के खिलाफ जागरूकता फैलाने के लिए काम करता है।
@@ -174,13 +156,20 @@
     <!-- Safe Comment checker -->
     <div class="commentcontainer">
       <div class="comment-box">
-        <h2>Comment Checker</h2>
+        <h2><i class="fa-regular fa-comment" style="color: #e6a465;"></i> Comment Checker</h2>
         <textarea
           id="commentInput"
           class="comment-input"
           rows="5"
-          placeholder="Write your comment..."
+          placeholder="I will kill you..."
         ></textarea>
+        <p style="font-size: small;">Don't use "hate",
+          "violence",
+          "kill",
+          "attack",
+          "curse",
+          "racist",
+          "terrorist"</p>
         <button class="comment-submit" onclick="checkComment()">Submit</button>
         <div id="commentAlert" class="comment-alert"></div>
       </div>
@@ -189,31 +178,41 @@
     <!-- Contact Form -->
 
     <section class="contact-section">
-      <form
-        action="https://formspree.io/f/mgvaebvl"
-        method="POST"
-        class="contact-form"
-      >
-        <label for="user-email">Your Email:</label>
-        <input
-          type="email"
-          id="user-email"
-          name="user_email"
-          placeholder="Enter your email"
-          required
-        />
-
-        <label for="user-message">Your Message:</label>
-        <textarea
-          id="user-message"
-          name="user_message"
-          placeholder="Write your message..."
-          required
-        ></textarea>
-
-        <button type="submit">Send Message</button>
-      </form>
+      <div class="contact-container">
+        <!-- Contact Form -->
+        <form
+          action="https://formspree.io/f/mgvaebvl"
+          method="POST"
+          class="contact-form"
+        >
+          <h2><i class="fa-regular fa-message fa-beat-fade"></i>&nbsp; Get in Touch</h2>
+          <label for="user-email">Your Email:</label>
+          <input
+            type="email"
+            id="user-email"
+            name="user_email"
+            placeholder="Enter your email"
+            required
+          />
+    
+          <label for="user-message">Your Message:</label>
+          <textarea
+            id="user-message"
+            name="user_message"
+            placeholder="Write your message..."
+            required
+          ></textarea>
+    
+          <button type="submit">Send Message</button>
+        </form>
+    
+        <!-- Image Section -->
+        <div class="contact-image">
+          <img src="/assets/contactform-img.jpeg" alt="Contact Illustration" />
+        </div>
+      </div>
     </section>
+    
 
     <!-- SLIDE TO TOP -->
 
