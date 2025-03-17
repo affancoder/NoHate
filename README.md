@@ -53,7 +53,7 @@
 
 1️⃣ Clone the repository:  
 ```sh
-git clone https://github.com/yourusername/nohate.in.git
+git clone https://github.com/affancoder/nohate.in.git
 ```  
 2️⃣ Install dependencies:  
 ```sh
