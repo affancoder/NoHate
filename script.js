@@ -90,3 +90,32 @@ function checkComment() {
     );
   }
 }
+
+// Faqs
+
+document.querySelectorAll(".faq-item").forEach((item) => {
+  let question = item.querySelector(".faq-question");
+  let answer = item.querySelector(".faq-answer");
+  let icon = item.querySelector(".icon");
+
+  gsap.set(answer, { height: 0, opacity: 0 });
+
+  question.addEventListener("click", () => {
+    let isOpen = answer.style.display === "block";
+
+    document.querySelectorAll(".faq-answer").forEach((ans) => {
+      gsap.to(ans, { height: 0, opacity: 0, duration: 0.4 });
+      ans.style.display = "none";
+    });
+
+    document.querySelectorAll(".icon").forEach((icn) => {
+      gsap.to(icn, { rotate: 0, duration: 0.3 });
+    });
+
+    if (!isOpen) {
+      answer.style.display = "block";
+      gsap.to(answer, { height: "auto", opacity: 1, duration: 0.4 });
+      gsap.to(icon, { rotate: 45, duration: 0.3 });
+    }
+  });
+});
