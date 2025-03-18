@@ -378,7 +378,7 @@ body {
 
 /* What we do */
 
-#what-we-do{
+#what-we-do {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -426,21 +426,23 @@ body {
   list-style: none;
   padding: 0;
 }
+
 .what-we-do-content li {
   font-size: 18px;
-  color: #555;
+  color: #fff;
   margin-bottom: 15px;
   padding: 12px;
   border-radius: 8px;
-  background: linear-gradient(135deg, #ffcc70, #ff6b81);
-  color: #fff;
+  background: linear-gradient(135deg, #1e3c72, #2a5298); /* Deep Blue Gradient */
   font-weight: bold;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
 }
+
 .what-we-do-content li:hover {
   transform: scale(1.05);
-  background: linear-gradient(135deg, #ff6b81, #ffcc70);
+  background: linear-gradient(135deg, #2a5298, #1e3c72); /* Reverse Deep Blue Gradient */
 }
+
 @media (max-width: 768px) {
   .what-we-do {
     flex-direction: column;
@@ -448,6 +450,113 @@ body {
   }
   .what-we-do-content {
     max-width: 100%;
+  }
+}
+
+/* religious-hate exist */
+
+[data-wrapper] {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+[data-card-container] {
+  max-width: 800px;
+  width: 90%;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: expand 0.5s ease-in-out;
+}
+
+@keyframes expand {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+[data-card-title] {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+[data-highlight] {
+  color: #d9534f;
+  font-weight: bold;
+}
+
+[data-content] {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+[data-text-section] p {
+  font-size: 16px;
+  color: #555;
+}
+
+[data-text-section] ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+[data-text-section] li {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+[data-text-section] li strong {
+  color: #d9534f;
+}
+
+[data-image-section] {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+[data-image-section] img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+[data-image-section] img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  [data-image-section] {
+    justify-content: center;
+  }
+
+  [data-image-section] img {
+    max-width: 100%;
+  }
+
+  [data-text-section] ul {
+    text-align: center;
   }
 }
 
@@ -877,7 +986,7 @@ body {
 }
 .faq-question {
   font-weight: bold;
-  color: #01162a;
+  color: #1e3c72;
   display: flex;
   justify-content: space-between;
   align-items: center;
