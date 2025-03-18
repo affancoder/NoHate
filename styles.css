@@ -1019,6 +1019,52 @@ body {
   font-weight: 200;
 }
 
+#scrollToTop {
+  position: fixed;
+  bottom: 80px; /* Adjust this to place it above the AI Assistant button */
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s;
+  display: none; /* Initially hidden */
+}
+
+#scrollToTop:hover {
+  background-color: #0056b3;
+}
+
+/* AI Assistant Button */
+.ai-robo-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ai-robo-btn i {
+  font-size: 20px;
+}
+
+.ai-robo-btn:hover {
+  background-color: #218838;
+}
+
 @media (max-width: 768px) {
   html,
   body {
@@ -1076,6 +1122,4 @@ body {
   [data-wrapper] {
     padding: 6px;
   }
-  
-
 }

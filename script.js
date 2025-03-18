@@ -24,59 +24,44 @@ scrollToTopBtn.addEventListener("click", () => {
 
 // Safe Comment checker
 
-// Store banned words in local storage (only if not already set)
-if (!localStorage.getItem("bannedWordsList")) {
-  localStorage.setItem(
-    "bannedWordsList",
-    JSON.stringify([
-      "hate",
-      "violence",
-      "kill",
-      "attack",
-      "curse",
-      "racist",
-      "terrorist",
-    ])
-  );
-}
+// Force update the banned words list on every page load
+localStorage.setItem(
+  "bannedWordsList",
+  JSON.stringify([
+    "hate", "violence", "kill", "attack", "curse", "racist",
+    "hell", "stupid", "idiot", "moron", "dumb", "bastard", "asshole", 
+    "shit", "fuck", "slut", "whore", "bitch", "cunt", "damn", "piss", 
+    "dick", "cock", "faggot", "nazi", "jihad", "infidel", "blasphemy", 
+    "kafir", "christ-killer", "heathen", "devil-worshipper", "allah-hater", 
+    "muslim-hater", "hindu-hater", "christian-hater", "jew-hater", 
+    "buddhist-hater", "sikh-hater", "temple-attacker", "mosque-destroyer",
+    "church-burner", "quran-burner", "bible-burner", "gita-burner", "guru-hater"
+  ])
+);
 
 function checkComment() {
-  let comment = document
-    .getElementById("commentInput")
-    .value.trim()
-    .toLowerCase();
+  let comment = document.getElementById("commentInput").value.trim().toLowerCase();
   let alertBox = document.getElementById("commentAlert");
   let bannedWords = JSON.parse(localStorage.getItem("bannedWordsList"));
 
   // Check using regex for exact word matching
-  let foundWords = bannedWords.filter((word) =>
-    new RegExp(`\\b${word}\\b`, "i").test(comment)
-  );
+  let foundWords = bannedWords.filter((word) => new RegExp(`\\b${word}\\b`, "i").test(comment));
 
   console.log("Found Words:", foundWords); // Debugging
 
   if (foundWords.length > 0) {
-    alertBox.innerHTML = `⚠️ Warning! Your comment contains: <b>${foundWords.join(
-      ", "
-    )}</b>`;
+    alertBox.innerHTML = `⚠️ Warning! Your comment contains: <b>${foundWords.join(", ")}</b>`;
     alertBox.className = "comment-alert alert-danger";
     alertBox.style.display = "block";
-    gsap.fromTo(
-      alertBox,
-      { opacity: 0, y: -20 },
-      { opacity: 1, y: 0, duration: 0.5, ease: "bounce" }
-    );
+    gsap.fromTo(alertBox, { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.5, ease: "bounce" });
   } else {
     alertBox.innerHTML = "✅ Your comment is clean!";
     alertBox.className = "comment-alert alert-success";
     alertBox.style.display = "block";
-    gsap.fromTo(
-      alertBox,
-      { opacity: 0, scale: 0.5 },
-      { opacity: 1, scale: 1, duration: 0.5, ease: "elastic" }
-    );
+    gsap.fromTo(alertBox, { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.5, ease: "elastic" });
   }
 }
+
 
 // Faqs
 
@@ -122,4 +107,19 @@ document.querySelectorAll(".faq-item").forEach((item) => {
       gsap.to(icon, { rotate: 0, duration: 0.3 });
     }
   });
+});
+
+
+window.addEventListener("scroll", function () {
+  var scrollToTopBtn = document.getElementById("scrollToTop");
+  if (window.scrollY > 300) {
+    scrollToTopBtn.style.display = "block";
+  } else {
+    scrollToTopBtn.style.display = "none";
+  }
+});
+
+// Scroll to Top Functionality
+document.getElementById("scrollToTop").addEventListener("click", function () {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
