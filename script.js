@@ -123,3 +123,20 @@ window.addEventListener("scroll", function () {
 document.getElementById("scrollToTop").addEventListener("click", function () {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cursor = document.querySelector(".custom-cursor");
+
+  document.addEventListener("mousemove", (e) => {
+    requestAnimationFrame(() => {
+      cursor.style.left = `${e.clientX}px`;
+      cursor.style.top = `${e.clientY}px`;
+    });
+  });
+
+  document.addEventListener("mousedown", () => {
+    cursor.classList.add("click-effect");
+    setTimeout(() => cursor.classList.remove("click-effect"), 200);
+  });
+});

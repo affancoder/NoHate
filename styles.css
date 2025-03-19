@@ -898,6 +898,8 @@ body {
   margin-bottom: 10px;
   /* background: linear-gradient(to right, #ff8c00, #ff2a6d); */
   background-color: #3b7289;
+  background: linear-gradient(45deg, #1e3c72, #2a5298);
+
   font-weight: 550;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -925,7 +927,8 @@ body {
 /* Submit Button */
 .comment-submit {
   margin-top: 12px;
-  background: linear-gradient(45deg, #3b7289, #269bcd);
+  /* background: linear-gradient(45deg, #3b7289, #269bcd); */
+  background: linear-gradient(45deg, #1e3c72, #2a5298);
   color: white;
   border: none;
   padding: 12px;
@@ -937,11 +940,12 @@ body {
   text-transform: uppercase;
   transition: 0.3s;
   box-shadow: 0px 5px 15px #3b7289;
-}
+} 
 
 .comment-submit:hover {
-  background: linear-gradient(45deg, #0c6e98, #109cd8);
-  box-shadow: 0px 8px 20px lightskyblue;
+  /* background: linear-gradient(45deg, , #109cd8); */
+  background: linear-gradient(45deg, #1b355f, #264b88);
+  box-shadow: 0px 8px 20px rgb(83, 144, 182);
   transform: scale(1.05);
 }
 
@@ -1024,6 +1028,7 @@ body {
   bottom: 80px; /* Adjust this to place it above the AI Assistant button */
   right: 20px;
   background-color: #007bff;
+  background: linear-gradient(45deg, #1b355f, #264b88);
   color: white;
   border: none;
   padding: 10px 15px;
@@ -1121,5 +1126,42 @@ body {
 
   [data-wrapper] {
     padding: 6px;
+  }
+}
+
+/* Custom Cursor */
+.custom-cursor {
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease-out, background-color 0.3s ease;
+  mix-blend-mode: difference;
+  z-index: 9999;
+}
+
+/* Cursor Animation on Hover */
+body:hover .custom-cursor {
+  transform: scale(1.3);
+  background-color: rgb(255, 50, 50);
+}
+
+/* Click Effect */
+.click-effect {
+  animation: clickAnimation 0.2s ease-out;
+}
+
+/* Smooth Click Animation */
+@keyframes clickAnimation {
+  0% {
+    transform: scale(1.8);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 1;
   }
 }
