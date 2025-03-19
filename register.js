@@ -7,7 +7,7 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase
 import {
   getAuth,
   createUserWithEmailAndPassword,
-} from "https://www.gstatic.com/firbasejs/10.7.2/firebase-auth.js";
+} from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -34,11 +34,12 @@ submit.addEventListener("click", function (event) {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-  createUserWithEmailAndPassword(auth, email, password)
+  createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
       // Signed up
       const user = userCredential.user;
       alert("Creating Account...");
+      window.location.href = "index.html";
       // ...
     })
     .catch((error) => {
