@@ -86,6 +86,12 @@
         margin-top: 10px;
         font-size: 12px;
       }
+
+      @media (max-width: 768px) {
+        .left {
+          display: none;
+        }
+      }
     </style>
   </head>
   <body>
@@ -109,7 +115,9 @@
           </div>
           <button class="signup-btn">Sign Up</button>
         </form>
-        <p class="small-text">Already have an account? <a href="/register.html">Login</a></p>
+        <p class="small-text">
+          Already have an account? <a href="/register.html">Login</a>
+        </p>
       </div>
     </div>
     <script src="register.js"></script>
