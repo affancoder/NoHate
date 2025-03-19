@@ -125,6 +125,8 @@ document.getElementById("scrollToTop").addEventListener("click", function () {
 });
 
 
+// Cursor pointer
+
 document.addEventListener("DOMContentLoaded", () => {
   const cursor = document.querySelector(".custom-cursor");
 
@@ -140,3 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => cursor.classList.remove("click-effect"), 200);
   });
 });
+
+
+// Auth
+
