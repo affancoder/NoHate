@@ -24,56 +24,52 @@
     />
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
   </head>
   <body>
     <div class="custom-cursor"></div>
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
       <div class="container-fluid">
-        <img src="favicon.jpg" id="logo" />
-        <a class="navbar-brand" href="#">&nbsp;NoHate</a>
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="favicon.jpg" id="logo" class="me-2" style="height: 40px" />
+          NoHate
+        </a>
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <!-- <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/index.html"
-                >Home</a
-              >
-            </li> -->
-
-            <!-- <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
-            </li> -->
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#mission">Mission</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#blog">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#contact">Contact</a>
+            </li>
           </ul>
-          <a href="/register.html">
-            <button class="btn btn-outline-success" type="submit">
-              <i class="fa-solid fa-user"></i>&nbsp;Login
+          <a href="/register.html" class="ms-3">
+            <button class="btn btn-outline-primary">
+              <i class="fa-solid fa-user"></i> Login
             </button>
           </a>
         </div>
@@ -101,10 +97,10 @@
 
     <!-- Feature Section -->
 
-    <section class="motive">
+    <section id="mission" class="motive">
       <div class="motive-wrapper">
         <div class="motive-img">
-          <img src="/assets/feature-img.webp" alt="Motive Image" />
+          <img src="/assets/mission.jpg" alt="Motive Image" />
         </div>
         <div class="motive-content">
           <h2 class="motive-title">Our <span>Mission</span></h2>
@@ -123,28 +119,36 @@
 
     <!-- About Us -->
 
-    <section class="about-section">
-      <div class="about-text">
-        <h2>हमारे बारे में | About Us</h2>
-        <p>
-          <strong>नोहेट.इन</strong> एक पहल है जो साम्प्रदायिकता के खिलाफ है।
-          हमारा उद्देश्य सोशल मीडिया से नफरत फैलाने वाली सामग्री को हटाना और
-          धार्मिक घृणा के कारणों को समझना है। हम मानते हैं कि समाज में भाईचारा
-          और एकता को बढ़ावा देना चाहिए, और हर धर्म और समुदाय के प्रति सम्मान
-          होना चाहिए।
-        </p>
-        <p>
-          <strong>NoHate.in</strong> is an initiative against communalism. Our
-          goal is to remove hate-spreading content from social media and
-          understand the causes of religious hatred. We believe in promoting
-          brotherhood and unity in society and respecting every religion and
-          community.
-        </p>
-      </div>
-      <div class="about-image">
-        <img src="/assets/about-us-img.webp" alt="About Us Image" />
+    <section id="identity-section" class="mission-container">
+      <div class="mission-wrapper">
+        <div class="mission-content">
+          <h2 class="mission-title">
+            <span>हमारे बारे में</span> | About Us
+          </h2>
+          <p class="mission-text">
+            <strong>नोहेट.इन</strong> एक पहल है जो साम्प्रदायिकता के खिलाफ है।
+            हमारा उद्देश्य सोशल मीडिया से नफरत फैलाने वाली सामग्री को हटाना और
+            धार्मिक घृणा के कारणों को समझना है। हम मानते हैं कि समाज में भाईचारा
+            और एकता को बढ़ावा देना चाहिए, और हर धर्म और समुदाय के प्रति सम्मान
+            होना चाहिए।
+          </p>
+          <p class="mission-text">
+            <strong>NoHate.in</strong> is an initiative against communalism. Our
+            goal is to remove hate-spreading content from social media and
+            understand the causes of religious hatred. We believe in promoting
+            brotherhood and unity in society and respecting every religion and
+            community.
+          </p>
+        </div>
+        <div class="mission-visual">
+          <video src="/assets/about.mp4" alt="About Us Image" loop autoplay>
+          <div class="overlay-effect"></div>
+        </div>
       </div>
     </section>
+    
+
+    
 
     <!-- Call to action -->
 
@@ -300,7 +304,7 @@
       >
         <div data-text-section style="flex: 1">
           <h3 data-card-title>
-             What We Aim to Achieve <br /><br />
+            What We Aim to Achieve <br /><br />
             <span data-highlight>(हम क्या हासिल करना चाहते हैं?)<br /></span>
           </h3>
           <p>
