@@ -142,7 +142,3 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => cursor.classList.remove("click-effect"), 200);
   });
 });
-
-
-// Auth
-
