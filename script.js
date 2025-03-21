@@ -1,7 +1,3 @@
-// Call to action
-
-gsap.to(".cta-card", { duration: 1.2, opacity: 1, y: 0, ease: "power3.out" });
-
 // What we do
 
 gsap.to(".what-we-do", { duration: 1.2, opacity: 1, y: 0, ease: "power3.out" });

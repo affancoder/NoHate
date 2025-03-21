@@ -365,7 +365,7 @@ body {
 
 .action-link {
   display: inline-block;
-  padding: 10px 10px;
+  padding: 10px;
   font-size: 16px;
   font-weight: bold;
   text-decoration: none;
@@ -771,6 +771,13 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
+
+  nav{
+    display: flex;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
   .aim-card {
     flex-direction: column;
     text-align: center;
