@@ -6,7 +6,8 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase
 
 import {
   getAuth,
-  signInWithEmailAndPassword ,
+  createUserWithEmailAndPassword,
+  updateProfile,
 } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
 
 
@@ -29,29 +30,35 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);  // You need to get the auth instance properly here
 
-//inputs
+const submitSignup = document.getElementById("submit-signup");
+submitSignup.addEventListener("click",async function (event) {
+console.log("submit-signup call")
 
-const submit = document.getElementById("submit");
-submit.addEventListener("click", function (event) {
-  event.preventDefault();
+event.preventDefault();
+console.log("submit-signup call")
   
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
+  const fullname = document.getElementById("full-name").value;
   
-  signInWithEmailAndPassword(auth,email, password)
-  .then((userCredential) => {
-      // Signed up
-      const user = userCredential.user;
-      console.log(user)
-      // alert("Signin successfully...");
-      window.location.href = "/index.html";
-      // ...
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // console.log(error)
-      alert(errorMessage);
-      // ..
+  try{
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    alert("Account created successfully!");
+    const user = userCredential.user;
+
+    // Update the user's profile with the full name
+    await updateProfile(user, {
+      displayName: fullname // Set the user's display name
     });
+    console.log(user)
+    alert("Creating Account...");
+    window.location.href = "/register.html";
+    // ...
+      }catch{
+
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // console.log(error)
+        alert(errorMessage);
+      }
 });
