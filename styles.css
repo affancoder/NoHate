@@ -1697,7 +1697,7 @@ body:hover .custom-cursor {
   background-image: url("/assets/learnfromhistory.jpg");
 }
 
-.content {
+#parallexSection .content {
   /* padding: 50px 20px; */
   width: 100%;
   text-align: center;
