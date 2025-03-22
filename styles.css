@@ -61,7 +61,8 @@ body {
   position: relative;
   z-index: 1;
   padding: 20px;
-  width: 80%;
+  width: 94%;
+  color: white;
 }
 .content h1 {
   font-size: 3rem;
@@ -105,6 +106,7 @@ body {
   max-width: 1100px;
   width: 100%;
   background: #001f3f; /* Navy blue */
+  background: linear-gradient(135deg, #0f172a, #1e3a8a); /* Navy Blue Background */
   backdrop-filter: blur(15px);
   border-radius: 15px;
   padding: 40px;
@@ -209,7 +211,7 @@ body {
 .mission-container {
   background: linear-gradient(to right, #0a0f2c, #002855, #004e89);
   color: #fff;
-  padding: 100px 10%;
+  padding: 80px 10%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -352,6 +354,10 @@ body {
 }
 
 /* Call to action */
+
+#whitebg .mission-container {
+  height: 860px !important;
+}
 
 #mission-container {
   border-radius: 10px;
@@ -507,8 +513,8 @@ body {
 
 /* Glassmorphism Card */
 [data-card-container] {
-  max-width: 1100px;
-  width: 90%;
+  max-width: 1150px;
+  width: 100%;
   background: rgba(255, 255, 255, 0.01);
   padding: 25px;
   border-radius: 12px;
@@ -589,7 +595,33 @@ body {
   text-align: left;
 }
 
-/* Responsive Styling */
+[data-wrapper] {
+  font-family: "Poppins", sans-serif;
+  background: #ffffff; /* White background outside the card */
+  margin: 0;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Glassmorphism Card with Navy Blue Background */
+[data-card-container] {
+  max-width: 1150px;
+  width: 100%;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a); /* Navy Blue Background */
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: fadeIn 0.5s ease-in-out;
+  text-align: left;
+}
+
+
 /* Responsive Styling */
 @media (max-width: 1024px) {
   [data-card-container] {
@@ -771,8 +803,7 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
-
-  nav{
+  nav {
     display: flex;
     text-align: center;
     font-size: 1.2rem;
@@ -796,6 +827,21 @@ body {
 }
 
 /* Get Evolved */
+
+#evolved {
+  background: #f8f9fa;
+  margin: 40px 0;
+  max-width: 100%;
+  padding: 60px 50px;
+  border-radius: 10px;
+}
+.involved-card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.involved-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
 
 /* General Section Styling */
 
@@ -1460,11 +1506,11 @@ body {
   background-color: #0a1f44;
   color: white;
   margin: 40px;
-  padding: 20px;
+  padding: 40px;
   border-radius: 20px;
 }
 .blog-wrapper {
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
 }
 .blog-title-section {
@@ -1498,8 +1544,6 @@ body {
   font-size: 14px;
   margin-top: 5px;
 }
-
-
 
 @media (max-width: 768px) {
   html,
@@ -1569,6 +1613,12 @@ body {
   .blog-box img {
     width: 100%;
     height: auto;
+  }
+
+  /* About */
+
+  #identity-section {
+    height: 100%;
   }
 }
 

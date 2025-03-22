@@ -29,7 +29,7 @@
   <body>
     <div class="custom-cursor"></div>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center" href="#">
           <img src="favicon.jpg" id="logo" class="me-2" style="height: 40px" />
@@ -154,13 +154,13 @@
 
     <!-- Call to action -->
 
-    <div id="whitebg">
+    <div id="whitebg" class="calltoaction">
       <div class="mission-container" id="mission-container">
         <div class="mission-wrapper">
           
           <!-- Right Side - Content -->
           <div class="mission-content">
-            <h2 class="mission-title">A World of Unity / एकता की दुनिया</h2>
+            <h2 class="mission-title">A World of Unity</h2>
             <p class="mission-text">
               We believe in a world free from hate, where every individual, regardless of their religion, culture, or beliefs, is treated with respect and kindness.
             </p>
@@ -336,31 +336,37 @@
     
     <!-- Get Evolved -->
 
-    <section style="display: flex; align-items: center; justify-content: center; padding: 50px; background: #f4f4f4;" id="evolved">
-      <div style="flex: 1; padding: 20px;">
-          <h2 style="color: #222;">Get Involved <span style="color: #007bff;">(शामिल हों)</span></h2>
-          <div style="margin-top: 20px;">
-              <h3 style="color: #333;">🚀 Volunteer</h3>
-              <p>हमारे अभियान में शामिल होकर नफरत के खिलाफ काम करें। आपके योगदान से समाज में बदलाव लाने में मदद मिलेगी।</p>
+    <section id="evolved" class="container">
+      <div class="row align-items-center">
+          <!-- Left Content -->
+          <div class="col-lg-6 mb-4">
+              <h2 class="fw-bold text-dark">Get Involved <span class="text-primary">(शामिल हों)</span></h2>
+              <div class="mt-4">
+                  <div class="card involved-card p-3 border-0 shadow-sm">
+                      <h3 class="text-dark">🚀 Volunteer</h3>
+                      <p>हमारे अभियान में शामिल होकर नफरत के खिलाफ काम करें। आपके योगदान से समाज में बदलाव लाने में मदद मिलेगी।</p>
+                  </div>
+              </div>
+              <div class="mt-3">
+                  <div class="card involved-card p-3 border-0 shadow-sm">
+                      <h3 class="text-dark">💰 Donate</h3>
+                      <p>हमारी पहल को समर्थन देने के लिए दान करें। आपका योगदान हमें सोशल मीडिया पर नफरत फैलाने वाले कंटेंट को हटाने में मदद करेगा।</p>
+                  </div>
+              </div>
+              <div class="mt-3">
+                  <div class="card involved-card p-3 border-0 shadow-sm">
+                      <h3 class="text-dark">📢 Spread the Word</h3>
+                      <p>हमारे साथ जुड़कर अपनी आवाज उठाएं और इस पहल को फैलाएं।</p>
+                  </div>
+              </div>
           </div>
-          <div style="margin-top: 20px;">
-              <h3 style="color: #333;">💰 Donate</h3>
-              <p>हमारी पहल को समर्थन देने के लिए दान करें। आपका योगदान हमे सोशल मीडिया पर नफरत फैलाने वाले कंटेंट को हटाने में मदद करेगा।</p>
-          </div>
-          <div style="margin-top: 20px;">
-              <h3 style="color: #333;">📢 Spread the Word</h3>
-              <p>हमारे साथ जुड़कर अपनी आवाज उठाएं और इस पहल को फैलाएं।</p>
-          </div>
-      </div>
-      <div style="flex: 1; text-align: center;">
-          <!-- <video width="90%" controls>
-              <source src="/assets/about.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-          </video> -->
-          <img src="/assets/evolved.jpg" width="70%">
-      </div>
-    </section>
   
+          <!-- Right Image -->
+          <div class="col-lg-6 text-center">
+              <img src="/assets/evolved.jpg" class="img-fluid rounded shadow" alt="Get Involved" style="max-width: 80%;">
+          </div>
+      </div>
+     </section>  
   
     <!-- Resources -->
 
@@ -437,6 +443,9 @@
                     <p class="blog-description">Experts emphasize that religious tolerance fosters peace, social cohesion, and mutual respect. Scholars argue that education, open dialogue, and interfaith initiatives help dispel misconceptions and reduce prejudice. Sociologists highlight that societies embracing diversity thrive culturally and economically. Religious leaders advocate understanding shared moral values to bridge differences. Experts stress that tolerance isn’t about agreement but respect, allowing different beliefs to coexist peacefully, ultimately strengthening communities and promoting global harmony.</p>
                 </div>
             </div>
+            <div class="d-flex justify-content-center">
+              <button class="btn btn-secondary">Read more articles...</button>
+          </div>
         </div>
       </div>
     </div>
