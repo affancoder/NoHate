@@ -843,6 +843,12 @@ body {
   padding: 60px 50px;
   border-radius: 10px;
 }
+
+#evolved p{
+  /* color: #0056b3; */
+  font-weight: 500;
+}
+
 .involved-card {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
@@ -1282,6 +1288,7 @@ body {
   .comment-content {
     flex-direction: column; /* Stack text and image */
     align-items: center;
+
   }
 
   .comment-image {
@@ -1291,6 +1298,13 @@ body {
 
   .comment-box {
     padding: 20px; /* Reduce padding for smaller screens */
+  }
+
+  .commentcontainer {
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+    margin: 40px 0px;
   }
 }
 
@@ -1568,8 +1582,10 @@ body {
 
   /* faqs */
 
-  .faqsection {
-    /* padding: 50px; */
+  #faq-heading {
+    width: 100%;
+    padding: 0;
+    margin: 20px 0;
   }
 
   .faq-section {
@@ -1612,6 +1628,15 @@ body {
   }
 
   /* Blog */
+
+  .main-bg {
+    font-family: Arial, sans-serif;
+    background-color: #0a1f44;
+    color: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+  }
 
   .blog-box {
     flex-direction: column;
