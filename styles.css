@@ -989,7 +989,7 @@ body {
 }
 
 .footer-box:hover {
-  transform: translateY(-5px);
+  /* transform: translateY(-5px); */
 }
 
 .footer-box h3 {
