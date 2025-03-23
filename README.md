@@ -4,13 +4,16 @@
 
 ## 🏆 **About the Project**  
 
-**nohate.in** is an initiative to fight against communalism by removing hateful content from social media and understanding the root causes of religious hate. We aim to create a **safe, respectful, and united** digital space where people from all faiths and backgrounds coexist peacefully.  
+**🌍 NoHate.in – Uniting People, Eliminating Hate!**  
 
-🔹 Removing hate speech from social platforms  
-🔹 Educating people about religious tolerance  
-🔹 Encouraging interfaith dialogue and understanding  
+NoHate.in is a powerful initiative dedicated to **fighting communalism** by removing **hateful content** from social media and addressing the **root causes of religious hate**. Our mission is to create a **safe, respectful, and united** digital space where people from **all faiths and backgrounds** can coexist peacefully.  
 
----
+✨ **What We Do:**  
+🔹 **🚫 Removing Hate Speech** – We actively identify and report **harmful, divisive, and hateful** content on social media to maintain a **positive digital environment**.  
+🔹 **📚 Educating for Tolerance** – We spread **awareness about religious harmony**, **debunk myths**, and promote **mutual respect** among different communities.  
+🔹 **🤝 Encouraging Interfaith Dialogue** – We create **platforms for open discussions**, fostering **empathy and understanding** across diverse religions.  
+🔹 **🛡️ Empowering Digital Activists** – We train and support individuals to **recognize, report, and counter online hate** effectively.  
+🔹 **💙 Promoting Unity & Peace** – Our campaigns emphasize **love over hate**, ensuring social media becomes a place for **inspiration, not division**.  
 
 ## 🚀 **Features**  
 
@@ -25,8 +28,8 @@
 ## 🏗 **Tech Stack Used**  
 
 🔹 **Frontend**: HTML, CSS, JavaScript
-🔹 **Backend**: Node.js, Express.js  
-🔹 **Database**: MongoDB  
+🔹 **Backend**: Firebase
+🔹 **Database**: Firebase
 🔹 **Authentication**: JWT / OAuth  
 🔹 **Hosting**: Vercel
 
@@ -73,5 +76,7 @@ npm start
 💬 Twitter: [@nohatein](https://twitter.com/nohatein)  
 
 Let’s build a **hate-free, peaceful digital world** together! 🤝💙
+Join us in building a world where **kindness, respect, and unity** triumph over hate! 🌎💖 **#NoHate #SpreadLove #UnityInDiversity**
 
 # Build by MD AFFAN ASGHAR 
+
