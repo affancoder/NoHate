@@ -1,752 +1,1052 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoHate</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- logo -->
+    <link rel="shortcut icon" href="favicon.jpg" type="image/x-icon" />
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NoHate</title>
-  <link rel="stylesheet" href="styles.css" />
-  <!-- logo -->
-  <link rel="shortcut icon" href="favicon.jpg" type="image/x-icon" />
-  <!-- bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <body>
+    <div class="custom-cursor"></div>
 
-</head>
-
-<body>
-  <div class="custom-cursor"></div>
-
-  <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand d-flex align-items-center" href="#">
-        <img src="favicon.jpg" id="logo" class="me-2" style="height: 40px" />
-        NoHate
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" href="/index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#mission">Mission</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#resouces">Resource</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#blog">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#contact">Contact</a>
-          </li>
-        </ul>
-        <a href="/register.html" class="ms-3">
-          <button class="btn btn-outline-primary">
-            <i class="fa-solid fa-user"></i> Login
-          </button>
-          &nbsp;
-          <button id="logoutBtn" class="btn btn-danger">Logout</button>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="favicon.jpg" id="logo" class="me-2" style="height: 40px" />
+          NoHate
         </a>
-        <h2 id="userName"></h2>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero section -->
-
-  <section class="hero">
-    <img src="/assets/right_side_img.jpg" alt="Hero Image" />
-    <div class="overlay"></div>
-    <div class="content">
-      <h1>Welcome to NoHate!</h1>
-      <div class="marquee">
-        <span>Nohate.in is an initiative against communalism. Our aim is to
-          remove hate content from social media and understand the causes of
-          religious hatred. We believe that brotherhood and unity should be
-          promoted in society, and there should be respect for every
-          religion and community.</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Feature Section -->
-
-  <section id="mission" class="motive">
-    <div class="motive-wrapper">
-      <div class="motive-img">
-        <img src="/assets/mission.jpg" alt="Motive Image" />
-      </div>
-      <div class="motive-content">
-        <h2 class="motive-title">Our <span>Mission</span></h2>
-        <p class="motive-text">
-          **Nohate.in** is a dedicated initiative to combat communalism and
-          online hatred. Our mission is to identify and remove hateful content
-          from social media while addressing the root causes of religious
-          intolerance. We strive to foster harmony, promote unity, and
-          encourage mutual respect among all communities, ensuring a peaceful
-          and inclusive society.
-        </p>
-        <a href="#" class="motive-btn">Discover More</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Us -->
-
-  <div id="about">
-    <section id="identity-section" class="mission-container">
-      <div class="mission-wrapper">
-        <div class="mission-content">
-          <h2 class="mission-title">
-            <span>हमारे बारे में</span> | About Us
-          </h2>
-          <p class="mission-text">
-            <strong>नोहेट.इन</strong> एक पहल है जो साम्प्रदायिकता के खिलाफ है।
-            हमारा उद्देश्य सोशल मीडिया से नफरत फैलाने वाली सामग्री को हटाना और
-            धार्मिक घृणा के कारणों को समझना है। हम मानते हैं कि समाज में भाईचारा
-            और एकता को बढ़ावा देना चाहिए, और हर धर्म और समुदाय के प्रति सम्मान
-            होना चाहिए।
-          </p>
-          <p class="mission-text">
-            <strong>NoHate.in</strong> is an initiative against communalism. Our
-            goal is to remove hate-spreading content from social media and
-            understand the causes of religious hatred. We believe in promoting
-            brotherhood and unity in society and respecting every religion and
-            community.
-          </p>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#mission">Mission</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#educational-resources">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#contact">Contact</a>
+            </li>
+          </ul>
+          <a href="/register.html" class="ms-3">
+            <button class="btn btn-outline-primary">
+              <i class="fa-solid fa-user"></i> Login
+            </button>
+            &nbsp;
+            <button id="logoutBtn" class="btn btn-danger">Logout</button>
+          </a>
+          <h2 id="userName"></h2>
         </div>
-        <div class="mission-visual">
-          <video loop autoplay muted playsinline preload="auto">
-            <source src="/assets/about.mp4" type="video/mp4">
-          </video>          
+      </div>
+    </nav>
+
+    <!-- Hero section -->
+
+    <section class="hero">
+      <img src="/assets/right_side_img.jpg" alt="Hero Image" />
+      <div class="overlay"></div>
+      <div class="content">
+        <h1>Welcome to NoHate!</h1>
+        <div class="marquee">
+          <span
+            >Nohate.in is an initiative against communalism. Our aim is to
+            remove hate content from social media and understand the causes of
+            religious hatred. We believe that brotherhood and unity should be
+            promoted in society, and there should be respect for every
+            religion and community.</span
+          >
         </div>
       </div>
     </section>
-  </div>
 
-  <!-- Call to action -->
+    <!-- Feature Section -->
 
-  <div class="full-width-bg">
-    <div class="container-unity">
-        <div class="wrapper-unity">
-
-            <!-- Content Section -->
-            <div class="content-section-unity">
-                <h2 class="heading-unity" id="faq-heading">World of Unity</h2>
-                <p class="text-unity">
-                    We believe in a world free from hate, where every individual, regardless of their religion, culture, or beliefs, is treated with respect and kindness.
-                </p>
-
-                <h3>🌟 Our Vision / हमारा दृष्टिकोण 🌟</h3>
-                <ul class="list-unity">
-                    <li>🕊️ Promoting peace and harmony among all communities. / सभी समुदायों के बीच शांति और सद्भावना को बढ़ावा देना।</li>
-                    <li>🙏 Encouraging respect for all religions and beliefs. / सभी धर्मों और विश्वासों के प्रति सम्मान को प्रोत्साहित करना।</li>
-                    <li>💖 Building a society based on love and mutual understanding. / प्रेम और आपसी समझ पर आधारित समाज का निर्माण करना।</li>
-                    <li>🚫 Standing against discrimination and hatred. / भेदभाव और घृणा के खिलाफ खड़ा होना।</li>
-                </ul>
-
-                <!-- Action Links -->
-                <div class="actions-unity">
-                    <a href="#" class="link-unity"><i class="fas fa-phone"></i> Call</a>
-                    <a href="#" class="link-unity"><i class="fas fa-share-alt"></i> Share</a>
-                    <a href="#" class="link-unity"><i class="fas fa-user-plus"></i> Join Us</a>
-                    <a href="#" class="link-unity"><i class="fas fa-hand-holding-heart"></i> Support the Cause</a>
-                </div>
-            </div>
-
-            <!-- Visual Section -->
-            <div class="visual-section-unity">
-              <video class="video-unity" loop autoplay muted playsinline preload="auto">
-                <source src="/assets/call1.mp4" type="video/mp4">
-              </video>
-              
-            </div>
-
+    <section id="mission" class="motive">
+      <div class="motive-wrapper">
+        <div class="motive-img">
+          <img src="/assets/mission.jpg" alt="Motive Image" />
         </div>
-    </div>
-  </div> 
-
-  <!-- What we do -->
-  <div id="what-we-do">
-    <div class="what-we-do">
-      <div class="what-we-do-image">
-        <img src="/assets/whatwedo.jpg" alt="Community Work" />
-      </div>
-      <div class="what-we-do-content">
-        <h2>🌍 What We Do | हम क्या करते हैं?</h2>
-        <ul>
-          <li>
-            🚫 <strong>Removing hate speech</strong> and communal content from
-            social media.
-          </li>
-          <li>
-            📚 <strong>Providing resources</strong> to educate the public
-            about the dangers of communalism.
-          </li>
-          <li>
-            🤝 <strong>Engaging with individuals</strong> and groups to reduce
-            religious hate and promote peace.
-          </li>
-          <li>
-            🧑‍🤝‍🧑 <strong>Build a Community</strong> Engage verified users, religious leaders, and the public to amplify the movement.
-
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- Why Religious Hate Exists -->
-
-  <div data-wrapper>
-    <div data-card-container>
-      <h3 data-card-title>
-        Why Religious Hate Exists
-        <span data-highlight>(धार्मिक घृणा क्यों होती है?)<br /></span>
-      </h3>
-      <div data-content>
-        <div data-text-section>
-          <ul>
-            <li>
-              <strong>📜 Historical Conflicts (ऐतिहासिक संघर्ष):</strong>
-              Wars, past events, and clashes over religion that shaped
-              societal divides.
-            </li>
-            <li>
-              <strong>🎭 Political Manipulation (राजनीतिक शोषण):</strong>
-              Leaders exploiting religion to gain power, often spreading false
-              narratives.
-            </li>
-            <li>
-              <strong>❌ Fear & Stereotypes (भय और रूढ़ियाँ):</strong>
-              Misinformation about religious groups leading to
-              misunderstandings and hatred.
-            </li>
-            <li>
-              <strong>📚 Ignorance & Lack of Awareness (अज्ञानता और जानकारी की
-                कमी):</strong>
-              Many people harbor hate towards others simply because they don't
-              understand the beliefs, traditions, or values of other
-              religions.
-            </li>
-            <li>
-              <strong>🏛️ Historical Context (ऐतिहासिक संदर्भ):</strong>
-              Religious conflicts and tensions have existed throughout
-              history, and these historical scars can perpetuate hate across
-              generations.
-            </li>
-            <li>
-              <strong>📰 Media’s Role (मीडिया की भूमिका):</strong>
-              Misrepresentation or biased portrayals of religious groups in
-              the media can fuel stereotypes and foster hatred.
-            </li>
-            <li>
-              <strong>💰 Economic & Social Insecurity (आर्थिक और सामाजिक
-                असुरक्षा):</strong>
-              Economic disparity or competition for resources can exacerbate
-              tensions between communities, leading to resentment and
-              violence.
-            </li>
-            <li>
-              <strong>🗣️ Lack of Interfaith Dialogue (आधिकारिक संवाद की
-                कमी):</strong>
-              If communities don’t engage in conversations or understand each
-              other's faith, it leads to suspicion, which can morph into
-              hatred.
-            </li>
-          </ul>
+        <div class="motive-content">
+          <h2 class="motive-title">Our <span>Mission</span></h2>
+          <p class="motive-text">
+            **Nohate.in** is a dedicated initiative to combat communalism and
+            online hatred. Our mission is to identify and remove hateful content
+            from social media while addressing the root causes of religious
+            intolerance. We strive to foster harmony, promote unity, and
+            encourage mutual respect among all communities, ensuring a peaceful
+            and inclusive society.
+          </p>
+          <a href="#" class="motive-btn">Discover More</a>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- Aim to achieve -->
+    <!-- About Us -->
 
-  <section class="aim-section">
-    <div class="aim-container">
-      <h2 class="aim-title" id="faq-heading">
-        What We Aim to Achieve
-        <span class="subtitle">(हम क्या हासिल करना चाहते हैं?)</span>
-      </h2>
-      <p class="aim-description">
-        Our goal is to create a society that is inclusive, respectful, and free from religious hate. By taking the
-        following steps, we can work towards peace and harmony.
-      </p>
-
-      <div class="aim-steps">
-        <div class="aim-card">
-          <img src="/assets/social-media.jpg" alt="Social Media Cleanup" class="aim-icon" />
-          <div>
-            <h3>🚨 Social Media Cleanup</h3>
-            <p>Working with platforms and users to report, remove, and prevent religious hate speech involves monitoring content, enforcing policies, promoting respectful discussions, and educating users. Collaboration with tech companies, AI moderation, and community guidelines help create a safer, inclusive online environment.</p>
-          </div>
-        </div>
-
-        <div class="aim-card">
-          <img src="/assets/awerness.jpg" alt="Building Awareness" class="aim-icon" />
-          <div>
-            <h3>📢 Building Awareness</h3>
-            <p>Organizing campaigns, seminars, and workshops to educate people about religious tolerance fosters understanding, respect, and harmony. These initiatives promote dialogue, challenge prejudices, and encourage inclusivity by engaging communities, experts, and leaders in discussions on coexistence and mutual respect across diverse beliefs.</p>
-          </div>
-        </div>
-
-        <div class="aim-card">
-          <img src="/assets/safe-online.jpg" alt="Safe Online Space" class="aim-icon" />
-          <div>
-            <h3>🌐 Creating a Safe, Respectful Online Space</h3>
-            <p>Ensuring that online platforms encourage respect and understanding across religious divides involves implementing strong policies, AI moderation, and user education. Promoting positive discourse, removing harmful content, and fostering inclusive dialogues help create a safe and respectful digital environment for all beliefs.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Parallex effect -->
-
-  <div id="parallexSection">
-
-    <div class="parallax parallax-1">Rise Against Communism</div>
-
-    <div class="content">
-        <p>Communism has historically led to economic downfall, restricted freedom and its impact is crucial to ensuring the prosperity of future generations.</p>
-    </div>
-
-    <div class="parallax parallax-2">Freedom Over Control</div>
-
-    <div class="content">
-        <p>Many countries have moved away from communist ideologies, embracing democracy and capitalism for better economic and social growth.</p>
-    </div>
-
-    <div class="parallax parallax-3">Learn From History</div>
-
-    <div class="content">
-        <p>History provides countless lessons on the dangers of communism. It’s important to analyze these patterns and prevent similar outcomes.</p>
-    </div>
-
-  </div>
-
-  <!-- Get Evolved -->
-
-  <section id="evolved" class="container">
-    <div class="row align-items-center">
-      <!-- Left Content -->
-      <div class="col-lg-7 mb-4">
-        <h2 class="fw-bold text-dark" id="faq-heading"><i class="fas fa-hands-helping"></i> Get Involved <span class="text-primary">(शामिल हों)</span></h2>
-        <div class="mt-4">
-          <div class="card involved-card p-3 border-0 shadow-sm">
-            <h3 class="text-dark">🚀 Volunteer</h3>
-            <p>हमारे अभियान में शामिल होकर नफरत के खिलाफ काम करें। आपके योगदान से समाज में बदलाव लाने में मदद मिलेगी।
+    <div id="about">
+      <section id="identity-section" class="mission-container">
+        <div class="mission-wrapper">
+          <div class="mission-content">
+            <h2 class="mission-title">
+              <span>हमारे बारे में</span> | About Us
+            </h2>
+            <p class="mission-text">
+              <strong>नोहेट.इन</strong> एक पहल है जो साम्प्रदायिकता के खिलाफ है।
+              हमारा उद्देश्य सोशल मीडिया से नफरत फैलाने वाली सामग्री को हटाना और
+              धार्मिक घृणा के कारणों को समझना है। हम मानते हैं कि समाज में
+              भाईचारा और एकता को बढ़ावा देना चाहिए, और हर धर्म और समुदाय के
+              प्रति सम्मान होना चाहिए।
+            </p>
+            <p class="mission-text">
+              <strong>NoHate.in</strong> is an initiative against communalism.
+              Our goal is to remove hate-spreading content from social media and
+              understand the causes of religious hatred. We believe in promoting
+              brotherhood and unity in society and respecting every religion and
+              community.
             </p>
           </div>
-        </div>
-        <div class="mt-3">
-          <div class="card involved-card p-3 border-0 shadow-sm">
-            <h3 class="text-dark">💰 Donate</h3>
-            <p>हमारी पहल को समर्थन देने के लिए दान करें। आपका योगदान हमें सोशल मीडिया पर नफरत फैलाने वाले कंटेंट को
-              हटाने में मदद करेगा।</p>
+          <div class="mission-visual">
+            <video loop autoplay muted playsinline preload="auto">
+              <source src="/assets/about.mp4" type="video/mp4" />
+            </video>
           </div>
         </div>
-        <div class="mt-3">
-          <div class="card involved-card p-3 border-0 shadow-sm">
-            <h3 class="text-dark">📢 Spread the Word</h3>
-            <p>हमारे साथ जुड़कर अपनी आवाज उठाएं और इस पहल को फैलाएं।</p>
+      </section>
+    </div>
+
+    <!-- Call to action -->
+
+    <div class="full-width-bg">
+      <div class="container-unity">
+        <div class="wrapper-unity">
+          <!-- Content Section -->
+          <div class="content-section-unity">
+            <h2 class="heading-unity" id="faq-heading">World of Unity</h2>
+            <p class="text-unity">
+              We believe in a world free from hate, where every individual,
+              regardless of their religion, culture, or beliefs, is treated with
+              respect and kindness.
+            </p>
+
+            <h3>🌟 Our Vision / हमारा दृष्टिकोण 🌟</h3>
+            <ul class="list-unity">
+              <li>
+                🕊️ Promoting peace and harmony among all communities. / सभी
+                समुदायों के बीच शांति और सद्भावना को बढ़ावा देना।
+              </li>
+              <li>
+                🙏 Encouraging respect for all religions and beliefs. / सभी
+                धर्मों और विश्वासों के प्रति सम्मान को प्रोत्साहित करना।
+              </li>
+              <li>
+                💖 Building a society based on love and mutual understanding. /
+                प्रेम और आपसी समझ पर आधारित समाज का निर्माण करना।
+              </li>
+              <li>
+                🚫 Standing against discrimination and hatred. / भेदभाव और घृणा
+                के खिलाफ खड़ा होना।
+              </li>
+            </ul>
+
+            <!-- Action Links -->
+            <div class="actions-unity">
+              <a href="#" class="link-unity"
+                ><i class="fas fa-phone"></i> Call</a
+              >
+              <a href="#" class="link-unity"
+                ><i class="fas fa-share-alt"></i> Share</a
+              >
+              <a href="#" class="link-unity"
+                ><i class="fas fa-user-plus"></i> Join Us</a
+              >
+              <a href="#" class="link-unity"
+                ><i class="fas fa-hand-holding-heart"></i> Support the Cause</a
+              >
+            </div>
+          </div>
+
+          <!-- Visual Section -->
+          <div class="visual-section-unity">
+            <video
+              class="video-unity"
+              loop
+              autoplay
+              muted
+              playsinline
+              preload="auto"
+            >
+              <source src="/assets/call1.mp4" type="video/mp4" />
+            </video>
           </div>
         </div>
       </div>
-
-      <!-- Right Image -->
-      <div class="col-lg-5 text-center">
-        <img src="/assets/evolved.jpg" class="custom-img" alt="Get Involved">
     </div>
-    
-    </div>
-  </section>
 
-  <!-- Resources -->
-
-  <div class="container" id="resouces">
-    <!-- <br/><br/><br/> -->
-    <div class="header"><h2 id="faq-heading">Resources</h2></div>
-    <p class="subtext">Curated content for fostering peace and religious tolerance.</p>
-
-    <div class="highlight-section">
-      <div class="highlight-text">
-        <h2>Promoting Religious Harmony</h2>
-        <p>Resources that help build an inclusive and respectful society.</p>
-        <a href="#" class="resource-link" style="color: white;">Explore →</a>
+    <!-- What we do -->
+    <div id="what-we-do">
+      <div class="what-we-do">
+        <div class="what-we-do-image">
+          <img src="/assets/whatwedo.jpg" alt="Community Work" />
+        </div>
+        <div class="what-we-do-content">
+          <h2>🌍 What We Do | हम क्या करते हैं?</h2>
+          <ul>
+            <li>
+              🚫 <strong>Removing hate speech</strong> and communal content from
+              social media.
+            </li>
+            <li>
+              📚 <strong>Providing resources</strong> to educate the public
+              about the dangers of communalism.
+            </li>
+            <li>
+              🤝 <strong>Engaging with individuals</strong> and groups to reduce
+              religious hate and promote peace.
+            </li>
+            <li>
+              🧑‍🤝‍🧑 <strong>Build a Community</strong> Engage verified users,
+              religious leaders, and the public to amplify the movement.
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 
-    <div class="latest">Latest</div>
-    <div class="latest-section">
-      <div class="resource-item">
-        <img src="/assets/article.jpg" alt="Educational Materials">
-        <div class="resource-content">
-          <h3>Educational Materials (शैक्षिक सामग्री)</h3>
-          <p>Articles, videos, and reports explaining the effects of communalism and ways to counter it.</p>
-          <a href="#" class="resource-link">Read More</a>
-        </div>
-      </div>
+    <!-- Why Religious Hate Exists -->
 
-      <div class="resource-item">
-        <img src="/assets/religious-tolerance.jpg" alt="Religious Tolerance Guide">
-        <div class="resource-content">
-          <h3>Religious Tolerance Guide (धार्मिक सहिष्णुता गाइड)</h3>
-          <p>A guide explaining how to engage with different religions respectfully.</p>
-          <a href="#" class="resource-link">Download Guide</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Blog -->
-
-  <div id="blog">
-    <div class="main-bg">
-      <div class="blog-wrapper">
-        <h1 class="blog-title-section">ब्लॉग (Blog)</h1>
-
-        <div class="blog-box">
-          <img src="/assets/InterfaithUnity.jpg" alt="Story">
-          <div class="blog-details">
-            <div class="blog-heading">Stories of Interfaith Unity</div>
-            <p class="blog-description">In a small town, a mosque, a temple, and a church stood side by side. When a
-              massive flood struck, people of all faiths united. Ahmed, a Muslim shopkeeper, cooked meals for displaced
-              families. Priya, a Hindu teacher, organized shelter in the temple, while Father John opened the church
-              doors to all. Together, they rescued the elderly, comforted children, and rebuilt homes. Differences faded
-              as compassion took over. When the waters receded, the town stood stronger—not just in bricks, but in bonds
-              of unity. Faith did not divide them; it brought them together in humanity.</p>
+    <div data-wrapper>
+      <div data-card-container>
+        <h3 data-card-title>
+          Why Religious Hate Exists
+          <span data-highlight>(धार्मिक घृणा क्यों होती है?)<br /></span>
+        </h3>
+        <div data-content>
+          <div data-text-section>
+            <ul>
+              <li>
+                <strong>📜 Historical Conflicts (ऐतिहासिक संघर्ष):</strong>
+                Wars, past events, and clashes over religion that shaped
+                societal divides.
+              </li>
+              <li>
+                <strong>🎭 Political Manipulation (राजनीतिक शोषण):</strong>
+                Leaders exploiting religion to gain power, often spreading false
+                narratives.
+              </li>
+              <li>
+                <strong>❌ Fear & Stereotypes (भय और रूढ़ियाँ):</strong>
+                Misinformation about religious groups leading to
+                misunderstandings and hatred.
+              </li>
+              <li>
+                <strong
+                  >📚 Ignorance & Lack of Awareness (अज्ञानता और जानकारी की
+                  कमी):</strong
+                >
+                Many people harbor hate towards others simply because they don't
+                understand the beliefs, traditions, or values of other
+                religions.
+              </li>
+              <li>
+                <strong>🏛️ Historical Context (ऐतिहासिक संदर्भ):</strong>
+                Religious conflicts and tensions have existed throughout
+                history, and these historical scars can perpetuate hate across
+                generations.
+              </li>
+              <li>
+                <strong>📰 Media’s Role (मीडिया की भूमिका):</strong>
+                Misrepresentation or biased portrayals of religious groups in
+                the media can fuel stereotypes and foster hatred.
+              </li>
+              <li>
+                <strong
+                  >💰 Economic & Social Insecurity (आर्थिक और सामाजिक
+                  असुरक्षा):</strong
+                >
+                Economic disparity or competition for resources can exacerbate
+                tensions between communities, leading to resentment and
+                violence.
+              </li>
+              <li>
+                <strong
+                  >🗣️ Lack of Interfaith Dialogue (आधिकारिक संवाद की
+                  कमी):</strong
+                >
+                If communities don’t engage in conversations or understand each
+                other's faith, it leads to suspicion, which can morph into
+                hatred.
+              </li>
+            </ul>
           </div>
-        </div>
-
-        <div class="blog-box">
-          <img src="/assets/Role of Education in Reducing Communalism.jpg" alt="Education">
-          <div class="blog-details">
-            <div class="blog-heading">The Role of Education in Reducing Communalism</div>
-            <p class="blog-description">Education fosters mutual respect by promoting understanding, critical thinking,
-              and empathy. When students learn about different religions, cultures, and histories, they develop
-              appreciation rather than prejudice. Schools encourage open discussions, dispel misconceptions, and
-              highlight shared values like kindness and honesty. Exposure to diverse perspectives helps individuals see
-              beyond stereotypes, reducing fear and mistrust. By teaching respect for all beliefs, education minimizes
-              ignorance-driven conflicts and promotes peaceful coexistence. An educated society values dialogue over
-              division, making religious harmony possible. Ultimately, education nurtures a mindset where differences
-              are embraced as strengths, fostering unity rather than conflict.</p>
-          </div>
-        </div>
-
-        <div class="blog-box">
-          <img src="/assets/hatespeechonline.jpg" alt="Hate Speech">
-          <div class="blog-details">
-            <div class="blog-heading">Fighting Hate Speech Online</div>
-            <p class="blog-description">Individuals and communities fight online hate speech and misinformation through
-              fact-checking, awareness campaigns, and digital literacy programs. Social media platforms use AI and
-              moderators to detect harmful content, while activists promote respectful dialogue. Influencers and
-              organizations counter hate with positive messages, encouraging kindness and inclusion. By reporting
-              harmful posts and spreading truth, people create a safer, more informed, and respectful online space for
-              all.</p>
-          </div>
-        </div>
-
-        <div class="blog-box">
-          <img src="/assets/expertview.jpg" alt="Expert Interviews">
-          <div class="blog-details">
-            <div class="blog-heading">Expert Views on Religious Tolerance</div>
-            <p class="blog-description">Experts emphasize that religious tolerance fosters peace, social cohesion, and
-              mutual respect. Scholars argue that education, open dialogue, and interfaith initiatives help dispel
-              misconceptions and reduce prejudice. Sociologists highlight that societies embracing diversity thrive
-              culturally and economically. Religious leaders advocate understanding shared moral values to bridge
-              differences. Experts stress that tolerance isn’t about agreement but respect, allowing different beliefs
-              to coexist peacefully, ultimately strengthening communities and promoting global harmony.</p>
-          </div>
-        </div>
-        <div class="d-flex justify-content-center">
-          <button class="btn btn-secondary">Read more articles...</button>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Safe Comment checker -->
+    <!-- Aim to achieve -->
 
-  <div class="commentcontainer">
-    <div class="comment-box">
-      <div class="comment-content">
-        <div class="comment-text">
-          <h2>
-            <i class="fa-regular fa-comment" style="color: #e6a465"></i> Comment Checker
-          </h2>
-          <textarea id="commentInput" class="comment-input" rows="5" placeholder="You are bible-burner"></textarea>
-          <p style="font-size: small">
-            Don't use abusive words, religious insults, or hate speech.
-          </p>
-          <button class="comment-submit" onclick="checkComment()">Submit</button>
-          <div id="commentAlert" class="comment-alert"></div>
-        </div>
-        <img src="/assets/right_side_img.png" alt="Comment Illustration" class="comment-image" />
-      </div>
-    </div>
-  </div>
+    <section class="aim-section">
+      <div class="aim-container">
+        <h2 class="aim-title" id="faq-heading">
+          What We Aim to Achieve
+          <span class="subtitle">(हम क्या हासिल करना चाहते हैं?)</span>
+        </h2>
+        <p class="aim-description">
+          Our goal is to create a society that is inclusive, respectful, and
+          free from religious hate. By taking the following steps, we can work
+          towards peace and harmony.
+        </p>
 
-  <!-- Faqs  -->
+        <div class="aim-steps">
+          <div class="aim-card">
+            <img
+              src="/assets/social-media.jpg"
+              alt="Social Media Cleanup"
+              class="aim-icon"
+            />
+            <div>
+              <h3>🚨 Social Media Cleanup</h3>
+              <p>
+                Working with platforms and users to report, remove, and prevent
+                religious hate speech involves monitoring content, enforcing
+                policies, promoting respectful discussions, and educating users.
+                Collaboration with tech companies, AI moderation, and community
+                guidelines help create a safer, inclusive online environment.
+              </p>
+            </div>
+          </div>
 
-  <div class="faqsection">
-    <section class="faq-section">
-      <h2 id="faq-heading">
-        <i class="fa-regular fa-clipboard"></i>अक्सर पूछे जाने वाले प्रश्न (FAQ's)
-      </h2>
-      <div class="faq-container">
-        <div class="faq-item">
-          <div class="faq-question">
-            नोहेट.इन क्या है? / What is nohate.in? <span class="icon">+</span>
+          <div class="aim-card">
+            <img
+              src="/assets/awerness.jpg"
+              alt="Building Awareness"
+              class="aim-icon"
+            />
+            <div>
+              <h3>📢 Building Awareness</h3>
+              <p>
+                Organizing campaigns, seminars, and workshops to educate people
+                about religious tolerance fosters understanding, respect, and
+                harmony. These initiatives promote dialogue, challenge
+                prejudices, and encourage inclusivity by engaging communities,
+                experts, and leaders in discussions on coexistence and mutual
+                respect across diverse beliefs.
+              </p>
+            </div>
           </div>
-          <div class="faq-answer">
-            नोहेट.इन एक पहल है जो सोशल मीडिया से धार्मिक घृणा फैलाने वाली
-            सामग्री को हटाने और लोगों को साम्प्रदायिकता के दुष्प्रभावों के
-            प्रति जागरूक करने का कार्य करता है।
-            <br />Nohate.in is an initiative to remove religious hate content
-            from social media and spread awareness about communal harmony.
-          </div>
-        </div>
 
-        <div class="faq-item">
-          <div class="faq-question">
-            मैं इस पहल में कैसे शामिल हो सकता हूँ? / How can I join this
-            initiative? <span class="icon">+</span>
-          </div>
-          <div class="faq-answer">
-            आप स्वयंसेवक बन सकते हैं, हेट स्पीच रिपोर्ट कर सकते हैं, जागरूकता
-            बढ़ाने में मदद कर सकते हैं या हमारी टीम से संपर्क कर सकते हैं।
-            <br />You can volunteer, report hate speech, help spread
-            awareness, or connect with our team.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            धार्मिक नफरत क्यों बढ़ रही है? / Why is religious hate increasing?
-            <span class="icon">+</span>
-          </div>
-          <div class="faq-answer">
-            इसका मुख्य कारण गलत सूचना (misinformation), राजनीतिक एजेंडा, और
-            सोशल मीडिया पर नकारात्मक प्रचार है।
-            <br />The key reasons are misinformation, political agendas, and
-            negative propaganda on social media.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            क्या हम सोशल मीडिया पर हेट स्पीच रिपोर्ट कर सकते हैं? / Can we
-            report hate speech on social media? <span class="icon">+</span>
-          </div>
-          <div class="faq-answer">
-            हां, सभी सोशल मीडिया प्लेटफॉर्म में रिपोर्टिंग का विकल्प होता है।
-            हम भी ऐसी सामग्रियों को मॉनिटर कर रिपोर्ट करते हैं।
-            <br />Yes, all social media platforms have a reporting option. We
-            also monitor and report such content.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            इस पहल के लिए फंडिंग कहाँ से आती है? / Where does the funding for
-            this initiative come from? <span class="icon">+</span>
-          </div>
-          <div class="faq-answer">
-            हमारी पहल व्यक्तिगत दान (donations) और स्वयंसेवकों की सहायता से
-            चलती है।
-            <br />Our initiative runs on personal donations and support from
-            volunteers.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            क्या नोहेट.इन किसी विशेष धर्म का समर्थन करता है? / Does nohate.in
-            support any particular religion?
-            <span class="icon">+</span>
-          </div>
-          <div class="faq-answer">
-            नहीं, नोहेट.इन किसी भी धर्म का पक्ष नहीं लेता। हमारा उद्देश्य सभी
-            धर्मों के प्रति समानता बनाए रखना और सांप्रदायिक सद्भाव को बढ़ावा
-            देना है।
-            <br />No, nohate.in does not support any particular religion. Our
-            goal is to maintain equality for all religions and promote
-            communal harmony.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            क्या नोहेट.इन सरकार के साथ काम करता है? / Does nohate.in work with
-            the government?
-            <span class="icon">+</span>
-          </div>
-          <div class="faq-answer">
-            नोहेट.इन एक स्वतंत्र पहल है, लेकिन हम सरकारी संस्थानों और अन्य
-            संगठनों के साथ मिलकर घृणा फैलाने वाले कंटेंट को हटाने में सहयोग कर
-            सकते हैं।
-            <br />Nohate.in is an independent initiative, but we collaborate
-            with government institutions and organizations to help remove
-            hateful content.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            क्या मैं नोहेट.इन को आर्थिक सहायता प्रदान कर सकता हूँ? / Can I
-            financially support nohate.in?
-            <span class="icon">+</span>
-          </div>
-          <div class="faq-answer">
-            हां, आप हमारी पहल को दान देकर समर्थन कर सकते हैं। आपका सहयोग हमें
-            ऑनलाइन घृणा से लड़ने में मदद करेगा।
-            <br />Yes, you can support our initiative through donations. Your
-            contribution will help us fight online hate.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            यदि मुझे ऑनलाइन घृणा फैलाने वाली सामग्री मिले तो मैं क्या करूँ? /
-            What should I do if I find hateful content online?
-            <span class="icon">+</span>
-          </div>
-          <div class="faq-answer">
-            आप संबंधित सोशल मीडिया प्लेटफॉर्म पर रिपोर्ट कर सकते हैं और हमें
-            इसकी जानकारी दे सकते हैं ताकि हम भी कार्रवाई कर सकें।
-            <br />You can report it on the respective social media platform
-            and notify us so we can take action as well.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            साइबर क्राइम हेल्पलाइन नंबर क्या है? / What is the cyber crime
-            helpline number? <span class="icon">+</span>
-          </div>
-          <div class="faq-answer">
-            यदि आप साइबर अपराध का शिकार हुए हैं, तो आप भारत में राष्ट्रीय
-            साइबर अपराध हेल्पलाइन नंबर 1930 पर कॉल कर सकते हैं या
-            <a href="https://cybercrime.gov.in" target="_blank">cybercrime.gov.in</a>
-            पर शिकायत दर्ज कर सकते हैं। <br />If you are a victim of
-            cybercrime, you can call the National Cyber Crime Helpline Number
-            1930 in India or file a complaint at
-            <a href="https://cybercrime.gov.in" target="_blank">cybercrime.gov.in</a>.
+          <div class="aim-card">
+            <img
+              src="/assets/safe-online.jpg"
+              alt="Safe Online Space"
+              class="aim-icon"
+            />
+            <div>
+              <h3>🌐 Creating a Safe, Respectful Online Space</h3>
+              <p>
+                Ensuring that online platforms encourage respect and
+                understanding across religious divides involves implementing
+                strong policies, AI moderation, and user education. Promoting
+                positive discourse, removing harmful content, and fostering
+                inclusive dialogues help create a safe and respectful digital
+                environment for all beliefs.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
-  </div>
 
-  <!-- Contact Form -->
+    <!-- Parallex effect -->
 
-  <section class="contact-section" id="contact">
-    <div class="contact-container">
-      <!-- Contact Form -->
-      <form action="https://formspree.io/f/mgvaebvl" method="POST" class="contact-form">
-        <h2>
-          <i class="fa-regular fa-message fa-beat-fade"></i>&nbsp; Get in
-          Touch
-        </h2>
-        <label for="user-email">Your Email:</label>
-        <input type="email" id="user-email" name="user_email" placeholder="Enter your email" required />
+    <div id="parallexSection">
+      <div class="parallax parallax-1">Rise Against Communism</div>
 
-        <label for="user-message">Your Message:</label>
-        <textarea id="user-message" name="user_message" placeholder="Write your message..." required></textarea>
+      <div class="content">
+        <p>
+          Communism has historically led to economic downfall, restricted
+          freedom and its impact is crucial to ensuring the prosperity of future
+          generations.
+        </p>
+      </div>
 
-        <button type="submit">Send Message</button>
-      </form>
+      <div class="parallax parallax-2">Freedom Over Control</div>
 
-      <!-- Image Section -->
-      <div class="contact-image">
-        <img src="/assets/contactform-img.jpeg" alt="Contact Illustration" />
+      <div class="content">
+        <p>
+          Many countries have moved away from communist ideologies, embracing
+          democracy and capitalism for better economic and social growth.
+        </p>
+      </div>
+
+      <div class="parallax parallax-3">Learn From History</div>
+
+      <div class="content">
+        <p>
+          History provides countless lessons on the dangers of communism. It’s
+          important to analyze these patterns and prevent similar outcomes.
+        </p>
       </div>
     </div>
-  </section>
 
-  <!-- AI Assistant Button -->
-  <a
-    href="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/03/13/10/20250313103719-9AWTDH8A.json">
-    <button class="ai-robo-btn"><i class="fa-solid fa-robot"></i>Chat</button>
-  </a>
+    <!-- Get Evolved -->
 
-  <!-- SLIDE TO TOP -->
-
-  <button id="scrollToTop">
-    <i class="fa-solid fa-arrow-up"></i>
-  </button>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-box">
-          <h3><img src="favicon.jpg" id="logo" />&nbsp;NoHate</h3>
-          <p>
-            Nohate.in एक समर्पित संगठन है जो समाज में जागरूकता फैलाने और
-            सकारात्मक बदलाव लाने का प्रयास करता है। हम शिक्षा, पर्यावरण
-            संरक्षण, और सामुदायिक सेवा में योगदान देते हैं।
-          </p>
+    <section id="evolved" class="container">
+      <div class="row align-items-center">
+        <!-- Left Content -->
+        <div class="col-lg-7 mb-4">
+          <h2 class="fw-bold text-dark" id="faq-heading">
+            Get Involved <span class="text-primary">(शामिल हों)</span>
+          </h2>
+          <div class="mt-4">
+            <div class="card involved-card p-3 border-0 shadow-sm">
+              <h3 class="text-dark">🚀 Volunteer</h3>
+              <p>
+                हमारे अभियान में शामिल होकर नफरत के खिलाफ काम करें। आपके योगदान
+                से समाज में बदलाव लाने में मदद मिलेगी।
+              </p>
+            </div>
+          </div>
+          <div class="mt-3">
+            <div class="card involved-card p-3 border-0 shadow-sm">
+              <h3 class="text-dark">💰 Donate</h3>
+              <p>
+                हमारी पहल को समर्थन देने के लिए दान करें। आपका योगदान हमें सोशल
+                मीडिया पर नफरत फैलाने वाले कंटेंट को हटाने में मदद करेगा।
+              </p>
+            </div>
+          </div>
+          <div class="mt-3">
+            <div class="card involved-card p-3 border-0 shadow-sm">
+              <h3 class="text-dark">📢 Spread the Word</h3>
+              <p>हमारे साथ जुड़कर अपनी आवाज उठाएं और इस पहल को फैलाएं।</p>
+            </div>
+          </div>
         </div>
-        <div class="footer-box">
-          <h3>Contact US</h3>
-          <p>
-            <i class="fa-solid fa-envelope"></i> Email: contact@nohate.org
-          </p>
-          <p><i class="fa-solid fa-phone"></i> Phone: +91 9876543210</p>
-          <p>
-            <i class="fa-solid fa-map-marker-alt"></i> पता: 123, हरमनी मार्ग,
-            नई दिल्ली, भारत
-          </p>
+
+        <!-- Right Image -->
+        <div class="col-lg-5 text-center">
+          <img
+            src="/assets/evolved.jpg"
+            class="custom-img"
+            alt="Get Involved"
+          />
         </div>
-        <div class="footer-box">
-          <h3>Supported Links</h3>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Terms & conditions</a></li>
-          </ul>
+      </div>
+    </section>
+
+    <!-- Resources -->
+
+    <!-- <div class="container" id="resouces">
+      <div class="header"><h2 id="faq-heading">Resources</h2></div>
+      <p class="subtext">
+        Curated content for fostering peace and religious tolerance.
+      </p>
+
+      <div class="highlight-section">
+        <div class="highlight-text">
+          <h2>Promoting Religious Harmony</h2>
+          <p>Resources that help build an inclusive and respectful society.</p>
+          <a href="#" class="resource-link" style="color: white">Explore →</a>
         </div>
-        <div class="footer-box">
-          <h3>Social Media Handles</h3>
-          <div class="social-links">
-            <a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
-            <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
-            <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-            <a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
+      </div>
+
+      <div class="latest">Latest</div>
+      <div class="latest-section">
+        <div class="resource-item">
+          <img src="/assets/article.jpg" alt="Educational Materials" />
+          <div class="resource-content">
+            <h3>Educational Materials (शैक्षिक सामग्री)</h3>
+            <p>
+              Articles, videos, and reports explaining the effects of
+              communalism and ways to counter it.
+            </p>
+            <a href="#" class="resource-link">Read More</a>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <img
+            src="/assets/religious-tolerance.jpg"
+            alt="Religious Tolerance Guide"
+          />
+          <div class="resource-content">
+            <h3>Religious Tolerance Guide (धार्मिक सहिष्णुता गाइड)</h3>
+            <p>
+              A guide explaining how to engage with different religions
+              respectfully.
+            </p>
+            <a href="#" class="resource-link">Download Guide</a>
           </div>
         </div>
       </div>
+    </div> -->
 
-      <div class="footer-bottom">
-        <p>&copy; 2025 NoHate. All Rights Reserved</p>
+    <!-- Blog -->
+
+    <section
+      id="educational-resources"
+      class="resources-section"
+      data-section="education"
+    >
+      <header class="resources-header">
+        <h2 id="resources-title">Educational Resources</h2>
+
+        <p class="resources-description" data-info="intro">
+          Explore our collection of articles, guides, and resources to better
+          understand religious harmony and learn how to combat hate speech
+          effectively.
+        </p>
+      </header>
+
+      <nav aria-label="Resource Navigation" class="resource-tabs">
+        <button
+          class="resource-btn active"
+          role="tab"
+          aria-selected="true"
+          data-tab="articles"
+        >
+          Blog Articles
+        </button>
+        <button
+          class="resource-btn"
+          role="tab"
+          aria-selected="false"
+          data-tab="guides"
+        >
+          Downloadable Guides
+        </button>
+      </nav>
+
+      <div class="resource-cards" role="list">
+        <article
+          class="resource-card"
+          role="listitem"
+          data-category="education"
+        >
+          <span
+            class="resource-tag"
+            aria-label="Category: Education"
+            data-tag="education"
+            >Education</span
+          >
+          <time datetime="2023-03-15" class="resource-date" data-date="mar15"
+            >Mar 15, 2023</time
+          >
+          <div class="blog-box">
+            <img src="/assets/InterfaithUnity.jpg" alt="Story" />
+          </div>
+          <h3 class="resource-title" data-title="diversity">
+            Understanding Religious Diversity in India
+          </h3>
+          <p class="resource-text">
+            India's rich tapestry of faiths has shaped its cultural identity for
+            millennia. Explore how diversity strengthens our society.
+          </p>
+          <a
+            href="#"
+            class="resource-link"
+            aria-label="Read more about Religious Diversity"
+            >Read More</a
+          >
+        </article>
+
+        <article class="resource-card" role="listitem" data-category="guide">
+          <span
+            class="resource-tag"
+            aria-label="Category: Guide"
+            data-tag="guide"
+            >Guide</span
+          >
+          <time datetime="2023-04-22" class="resource-date" data-date="apr22"
+            >Apr 22, 2023</time
+          >
+          <div class="blog-box">
+            <img src="/assets/blog-image2.jpg" alt="Story" />
+          </div>
+          <h3 class="resource-title" data-title="hate-speech">
+            How to Identify and Counter Hate Speech Online
+          </h3>
+          <p class="resource-text">
+            Learn the common patterns of religious hate speech and effective
+            strategies to respond constructively.
+          </p>
+          <a
+            href="#"
+            class="resource-link"
+            aria-label="Read more about Hate Speech"
+            >Read More</a
+          >
+        </article>
+
+        <article
+          class="resource-card"
+          role="listitem"
+          data-category="community"
+        >
+          <span
+            class="resource-tag"
+            aria-label="Category: Community"
+            data-tag="community"
+            >Community</span
+          >
+          <time datetime="2023-05-10" class="resource-date" data-date="may10"
+            >May 10, 2023</time
+          >
+          <div class="blog-box">
+            <img src="/assets/Interfaith-Dialogue.jpg" alt="Story" />
+          </div>
+          <h3 class="resource-title" data-title="dialogue">
+            Interfaith Dialogue: Building Bridges Across Communities
+          </h3>
+          <p class="resource-text">
+            Discover how conversation and understanding between different faith
+            groups create lasting harmony.
+          </p>
+          <a
+            href="#"
+            class="resource-link"
+            aria-label="Read more about Interfaith Dialogue"
+            >Read More</a
+          >
+        </article>
+      </div>
+    </section>
+
+    <!-- <div id="blog">
+      <div class="main-bg">
+        <div class="blog-wrapper">
+          <h1 class="blog-title-section">ब्लॉग (Blog)</h1>
+
+          <div class="blog-box">
+            <img src="/assets/InterfaithUnity.jpg" alt="Story" />
+            <div class="blog-details">
+              <div class="blog-heading">Stories of Interfaith Unity</div>
+              <p class="blog-description">
+                In a small town, a mosque, a temple, and a church stood side by
+                side. When a massive flood struck, people of all faiths united.
+                Ahmed, a Muslim shopkeeper, cooked meals for displaced families.
+                Priya, a Hindu teacher, organized shelter in the temple, while
+                Father John opened the church doors to all. Together, they
+                rescued the elderly, comforted children, and rebuilt homes.
+                Differences faded as compassion took over. When the waters
+                receded, the town stood stronger—not just in bricks, but in
+                bonds of unity. Faith did not divide them; it brought them
+                together in humanity.
+              </p>
+            </div>
+          </div>
+
+          <div class="blog-box">
+            <img
+              src="/assets/Role of Education in Reducing Communalism.jpg"
+              alt="Education"
+            />
+            <div class="blog-details">
+              <div class="blog-heading">
+                The Role of Education in Reducing Communalism
+              </div>
+              <p class="blog-description">
+                Education fosters mutual respect by promoting understanding,
+                critical thinking, and empathy. When students learn about
+                different religions, cultures, and histories, they develop
+                appreciation rather than prejudice. Schools encourage open
+                discussions, dispel misconceptions, and highlight shared values
+                like kindness and honesty. Exposure to diverse perspectives
+                helps individuals see beyond stereotypes, reducing fear and
+                mistrust. By teaching respect for all beliefs, education
+                minimizes ignorance-driven conflicts and promotes peaceful
+                coexistence. An educated society values dialogue over division,
+                making religious harmony possible. Ultimately, education
+                nurtures a mindset where differences are embraced as strengths,
+                fostering unity rather than conflict.
+              </p>
+            </div>
+          </div>
+
+          <div class="blog-box">
+            <img src="/assets/hatespeechonline.jpg" alt="Hate Speech" />
+            <div class="blog-details">
+              <div class="blog-heading">Fighting Hate Speech Online</div>
+              <p class="blog-description">
+                Individuals and communities fight online hate speech and
+                misinformation through fact-checking, awareness campaigns, and
+                digital literacy programs. Social media platforms use AI and
+                moderators to detect harmful content, while activists promote
+                respectful dialogue. Influencers and organizations counter hate
+                with positive messages, encouraging kindness and inclusion. By
+                reporting harmful posts and spreading truth, people create a
+                safer, more informed, and respectful online space for all.
+              </p>
+            </div>
+          </div>
+
+          <div class="blog-box">
+            <img src="/assets/expertview.jpg" alt="Expert Interviews" />
+            <div class="blog-details">
+              <div class="blog-heading">
+                Expert Views on Religious Tolerance
+              </div>
+              <p class="blog-description">
+                Experts emphasize that religious tolerance fosters peace, social
+                cohesion, and mutual respect. Scholars argue that education,
+                open dialogue, and interfaith initiatives help dispel
+                misconceptions and reduce prejudice. Sociologists highlight that
+                societies embracing diversity thrive culturally and
+                economically. Religious leaders advocate understanding shared
+                moral values to bridge differences. Experts stress that
+                tolerance isn’t about agreement but respect, allowing different
+                beliefs to coexist peacefully, ultimately strengthening
+                communities and promoting global harmony.
+              </p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center">
+            <button class="btn btn-secondary">Read more articles...</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Safe Comment checker -->
+
+    <div class="commentcontainer">
+      <div class="comment-box">
+        <div class="comment-content">
+          <div class="comment-text">
+            <h2>
+              <i class="fa-regular fa-comment" style="color: #e6a465"></i>
+              Comment Checker
+            </h2>
+            <textarea
+              id="commentInput"
+              class="comment-input"
+              rows="5"
+              placeholder="You are bible-burner"
+            ></textarea>
+            <p style="font-size: small">
+              Don't use abusive words, religious insults, or hate speech.
+            </p>
+            <button class="comment-submit" onclick="checkComment()">
+              Submit
+            </button>
+            <div id="commentAlert" class="comment-alert"></div>
+          </div>
+          <img
+            src="/assets/right_side_img.png"
+            alt="Comment Illustration"
+            class="comment-image"
+          />
+        </div>
       </div>
     </div>
-  </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
-  <script src="script.js"></script>
-</body>
+    <!-- Faqs  -->
 
+    <div class="faqsection">
+      <section class="faq-section">
+        <h2 id="faq-heading">
+          <i class="fa-regular fa-clipboard"></i>अक्सर पूछे जाने वाले प्रश्न
+          (FAQ's)
+        </h2>
+        <div class="faq-container">
+          <div class="faq-item">
+            <div class="faq-question">
+              नोहेट.इन क्या है? / What is nohate.in? <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+              नोहेट.इन एक पहल है जो सोशल मीडिया से धार्मिक घृणा फैलाने वाली
+              सामग्री को हटाने और लोगों को साम्प्रदायिकता के दुष्प्रभावों के
+              प्रति जागरूक करने का कार्य करता है।
+              <br />Nohate.in is an initiative to remove religious hate content
+              from social media and spread awareness about communal harmony.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              मैं इस पहल में कैसे शामिल हो सकता हूँ? / How can I join this
+              initiative? <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+              आप स्वयंसेवक बन सकते हैं, हेट स्पीच रिपोर्ट कर सकते हैं, जागरूकता
+              बढ़ाने में मदद कर सकते हैं या हमारी टीम से संपर्क कर सकते हैं।
+              <br />You can volunteer, report hate speech, help spread
+              awareness, or connect with our team.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              धार्मिक नफरत क्यों बढ़ रही है? / Why is religious hate increasing?
+              <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+              इसका मुख्य कारण गलत सूचना (misinformation), राजनीतिक एजेंडा, और
+              सोशल मीडिया पर नकारात्मक प्रचार है।
+              <br />The key reasons are misinformation, political agendas, and
+              negative propaganda on social media.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              क्या हम सोशल मीडिया पर हेट स्पीच रिपोर्ट कर सकते हैं? / Can we
+              report hate speech on social media? <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+              हां, सभी सोशल मीडिया प्लेटफॉर्म में रिपोर्टिंग का विकल्प होता है।
+              हम भी ऐसी सामग्रियों को मॉनिटर कर रिपोर्ट करते हैं।
+              <br />Yes, all social media platforms have a reporting option. We
+              also monitor and report such content.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              इस पहल के लिए फंडिंग कहाँ से आती है? / Where does the funding for
+              this initiative come from? <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+              हमारी पहल व्यक्तिगत दान (donations) और स्वयंसेवकों की सहायता से
+              चलती है।
+              <br />Our initiative runs on personal donations and support from
+              volunteers.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              क्या नोहेट.इन किसी विशेष धर्म का समर्थन करता है? / Does nohate.in
+              support any particular religion?
+              <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+              नहीं, नोहेट.इन किसी भी धर्म का पक्ष नहीं लेता। हमारा उद्देश्य सभी
+              धर्मों के प्रति समानता बनाए रखना और सांप्रदायिक सद्भाव को बढ़ावा
+              देना है।
+              <br />No, nohate.in does not support any particular religion. Our
+              goal is to maintain equality for all religions and promote
+              communal harmony.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              क्या नोहेट.इन सरकार के साथ काम करता है? / Does nohate.in work with
+              the government?
+              <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+              नोहेट.इन एक स्वतंत्र पहल है, लेकिन हम सरकारी संस्थानों और अन्य
+              संगठनों के साथ मिलकर घृणा फैलाने वाले कंटेंट को हटाने में सहयोग कर
+              सकते हैं।
+              <br />Nohate.in is an independent initiative, but we collaborate
+              with government institutions and organizations to help remove
+              hateful content.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              क्या मैं नोहेट.इन को आर्थिक सहायता प्रदान कर सकता हूँ? / Can I
+              financially support nohate.in?
+              <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+              हां, आप हमारी पहल को दान देकर समर्थन कर सकते हैं। आपका सहयोग हमें
+              ऑनलाइन घृणा से लड़ने में मदद करेगा।
+              <br />Yes, you can support our initiative through donations. Your
+              contribution will help us fight online hate.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              यदि मुझे ऑनलाइन घृणा फैलाने वाली सामग्री मिले तो मैं क्या करूँ? /
+              What should I do if I find hateful content online?
+              <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+              आप संबंधित सोशल मीडिया प्लेटफॉर्म पर रिपोर्ट कर सकते हैं और हमें
+              इसकी जानकारी दे सकते हैं ताकि हम भी कार्रवाई कर सकें।
+              <br />You can report it on the respective social media platform
+              and notify us so we can take action as well.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              साइबर क्राइम हेल्पलाइन नंबर क्या है? / What is the cyber crime
+              helpline number? <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+              यदि आप साइबर अपराध का शिकार हुए हैं, तो आप भारत में राष्ट्रीय
+              साइबर अपराध हेल्पलाइन नंबर 1930 पर कॉल कर सकते हैं या
+              <a href="https://cybercrime.gov.in" target="_blank"
+                >cybercrime.gov.in</a
+              >
+              पर शिकायत दर्ज कर सकते हैं। <br />If you are a victim of
+              cybercrime, you can call the National Cyber Crime Helpline Number
+              1930 in India or file a complaint at
+              <a href="https://cybercrime.gov.in" target="_blank"
+                >cybercrime.gov.in</a
+              >.
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Contact Form -->
+
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+        <!-- Contact Form -->
+        <form
+          action="https://formspree.io/f/mgvaebvl"
+          method="POST"
+          class="contact-form"
+        >
+          <h2>
+            <i class="fa-regular fa-message fa-beat-fade"></i>&nbsp; Get in
+            Touch
+          </h2>
+          <label for="user-email">Your Email:</label>
+          <input
+            type="email"
+            id="user-email"
+            name="user_email"
+            placeholder="Enter your email"
+            required
+          />
+
+          <label for="user-message">Your Message:</label>
+          <textarea
+            id="user-message"
+            name="user_message"
+            placeholder="Write your message..."
+            required
+          ></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+
+        <!-- Image Section -->
+        <div class="contact-image">
+          <img src="/assets/contactform-img.jpeg" alt="Contact Illustration" />
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Assistant Button -->
+    <a
+      href="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/03/13/10/20250313103719-9AWTDH8A.json"
+    >
+      <button class="ai-robo-btn"><i class="fa-solid fa-robot"></i>Chat</button>
+    </a>
+
+    <!-- SLIDE TO TOP -->
+
+    <button id="scrollToTop">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-box">
+            <h3><img src="favicon.jpg" id="logo" />&nbsp;NoHate</h3>
+            <p>
+              Nohate.in एक समर्पित संगठन है जो समाज में जागरूकता फैलाने और
+              सकारात्मक बदलाव लाने का प्रयास करता है। हम शिक्षा, पर्यावरण
+              संरक्षण, और सामुदायिक सेवा में योगदान देते हैं।
+            </p>
+          </div>
+          <div class="footer-box">
+            <h3>Contact US</h3>
+            <p>
+              <i class="fa-solid fa-envelope"></i> Email: contact@nohate.org
+            </p>
+            <p><i class="fa-solid fa-phone"></i> Phone: +91 9876543210</p>
+            <p>
+              <i class="fa-solid fa-map-marker-alt"></i> पता: 123, हरमनी मार्ग,
+              नई दिल्ली, भारत
+            </p>
+          </div>
+          <div class="footer-box">
+            <h3>Supported Links</h3>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Terms & conditions</a></li>
+            </ul>
+          </div>
+          <div class="footer-box">
+            <h3>Social Media Handles</h3>
+            <div class="social-links">
+              <a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
+              <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
+              <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+              <a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+              <a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 NoHate. All Rights Reserved</p>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
 </html>
