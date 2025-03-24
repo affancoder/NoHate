@@ -191,10 +191,87 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Parallex
 
-window.addEventListener('scroll', function() {
-  document.querySelectorAll('.parallax-image').forEach((element) => {
-      let speedFactor = 0.4; 
-      let yOffset = window.scrollY * speedFactor;
-      element.style.transform = `translateY(${yOffset}px)`;
+window.addEventListener("scroll", function () {
+  document.querySelectorAll(".parallax-image").forEach((element) => {
+    let speedFactor = 0.4;
+    let yOffset = window.scrollY * speedFactor;
+    element.style.transform = `translateY(${yOffset}px)`;
+  });
+});
+
+// logout
+
+document.getElementById("logoutBtn").addEventListener("click", () => {
+  auth
+    .signOut()
+    .then(() => {
+      alert("Logged out successfully!");
+      window.location.href = "login.html"; // Redirect after logout
+    })
+    .catch((error) => {
+      console.error("Logout Error: ", error);
+    });
+});
+
+// Blog & Resources functionalty
+
+document.addEventListener("DOMContentLoaded", function () {
+  const articlesTab = document.querySelector('[data-tab="articles"]');
+  const guidesTab = document.querySelector('[data-tab="guides"]');
+  const blogSection = document.querySelector(".resource-cards");
+
+  // Create the Downloadable Guides Section
+  const guidesSection = document.createElement("div");
+  guidesSection.className = "container";
+  guidesSection.id = "resources";
+  guidesSection.style.display = "none"; // Initially hidden
+  guidesSection.innerHTML = `
+      <div class="header"><h2 id="faq-heading">Resources</h2></div>
+      <p class="subtext">Curated content for fostering peace and religious tolerance.</p>
+
+      <div class="highlight-section">
+          <div class="highlight-text">
+              <h2>Promoting Religious Harmony</h2>
+              <p>Resources that help build an inclusive and respectful society.</p>
+              <a href="#" class="resource-link" style="color: white">Explore →</a>
+          </div>
+      </div>
+
+      <div class="latest">Latest</div>
+      <div class="latest-section">
+          <div class="resource-item">
+              <img src="/assets/article.jpg" alt="Educational Materials" />
+              <div class="resource-content">
+                  <h3>Educational Materials (शैक्षिक सामग्री)</h3>
+                  <p>Articles, videos, and reports explaining the effects of communalism and ways to counter it.</p>
+                  <a href="#" class="resource-link">Read More</a>
+              </div>
+          </div>
+
+          <div class="resource-item">
+              <img src="/assets/religious-tolerance.jpg" alt="Religious Tolerance Guide" />
+              <div class="resource-content">
+                  <h3>Religious Tolerance Guide (धार्मिक सहिष्णुता गाइड)</h3>
+                  <p>A guide explaining how to engage with different religions respectfully.</p>
+                  <a href="#" class="resource-link">Download Guide</a>
+              </div>
+          </div>
+      </div>
+  `;
+
+  // Insert the guides section after the blog section
+  blogSection.parentNode.insertBefore(guidesSection, blogSection.nextSibling);
+
+  // Function to switch to Guides
+  guidesTab.addEventListener("click", function () {
+      blogSection.style.display = "none"; // Hide Blog Articles
+      guidesSection.style.display = "block"; // Show Guides
+      articlesTab.classList.remove("active");
+      guidesTab.classList.add("active");
+  });
+
+  // Function to switch to Blog Articles (refreshes the page)
+  articlesTab.addEventListener("click", function () {
+      window.location.reload(); // Refresh the page to reset everything
   });
 });
