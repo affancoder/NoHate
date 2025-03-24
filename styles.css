@@ -280,9 +280,10 @@ body {
 .mission-visual video {
   width: 100%;
   max-width: 500px;
-  height: auto;
-  border-radius: 16px;
-  box-shadow: 0px 8px 25px rgba(0, 170, 255, 0.4);
+  margin-top: 50px;
+  /* height: 380px; */
+  border-radius: 20px;
+  box-shadow: 0px 8px 25px rgba(26, 173, 247, 0.4);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
@@ -359,9 +360,9 @@ body {
   }
 }
 
-/* Call to action */
 
-/* Unique Styling for Call to Action Section */
+/* Call to Action Section */
+
 
 .full-width-bg {
   width: 100%;
@@ -462,11 +463,13 @@ body {
 
 .video-unity {
   width: 100%;
-  height: 500px;
+  height: 340px;
   max-height: 500px;
   border-radius: 10px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
+
+
 
 /* Responsive Design */
 @media (max-width: 1024px) {
@@ -690,15 +693,6 @@ body {
   align-items: center;
 }
 
-/* Text Section */
-[data-text-section] p {
-  font-size: 18px;
-  color: white;
-  line-height: 1.6;
-  max-width: 800px;
-  margin: auto;
-}
-
 [data-text-section] li {
   display: grid;
   grid-template-columns: 220px auto; /* First column for <strong>, second for text */
@@ -720,17 +714,6 @@ body {
   display: inline-block;
   width: 100%;
   text-align: left;
-}
-
-[data-wrapper] {
-  font-family: "Poppins", sans-serif;
-  background: #ffffff; /* White background outside the card */
-  margin: 0;
-  padding: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
 }
 
 /* Glassmorphism Card with Navy Blue Background */
@@ -845,7 +828,7 @@ body {
 
 /* Container */
 .aim-container {
-  max-width: 900px;
+  max-width: 1150px;
   width: 100%;
   background: white;
   padding: 40px;
@@ -861,7 +844,7 @@ body {
 .aim-title {
   font-size: 26px;
   color: #1e3a8a;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .subtitle {
@@ -879,6 +862,7 @@ body {
   padding: 15px;
   border-radius: 8px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 /* Cards */
@@ -890,6 +874,7 @@ body {
 .aim-card {
   display: flex;
   align-items: center;
+  text-align: left;
   background: white;
   border-radius: 12px;
   padding: 15px;
@@ -903,8 +888,8 @@ body {
 }
 
 .aim-card img {
-  width: 50px;
-  height: 50px;
+  width: 250px;
+  height: 250px;
   margin-right: 15px;
 }
 
@@ -970,6 +955,15 @@ body {
   /* color: #0056b3; */
   font-weight: 500;
 }
+
+.custom-img {
+  max-width: 100%;
+  margin-top: 40px;
+  height: 420px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 
 .involved-card {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
