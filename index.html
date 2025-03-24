@@ -130,8 +130,9 @@
           </p>
         </div>
         <div class="mission-visual">
-          <video src="/assets/about.mp4" alt="About Us Image" loop autoplay>
-            <div class="overlay-effect"></div>
+          <video loop autoplay muted playsinline preload="auto">
+            <source src="/assets/about.mp4" type="video/mp4">
+          </video>          
         </div>
       </div>
     </section>
@@ -169,14 +170,15 @@
 
             <!-- Visual Section -->
             <div class="visual-section-unity">
-                <video class="video-unity" src="/assets/call1.mp4" loop autoplay></video>
-                <div class="overlay-unity"></div>
+              <video class="video-unity" loop autoplay muted playsinline preload="auto">
+                <source src="/assets/call1.mp4" type="video/mp4">
+              </video>
+              
             </div>
 
         </div>
     </div>
-  </div>
-  
+  </div> 
 
   <!-- What we do -->
   <div id="what-we-do">
@@ -198,6 +200,10 @@
           <li>
             🤝 <strong>Engaging with individuals</strong> and groups to reduce
             religious hate and promote peace.
+          </li>
+          <li>
+            🧑‍🤝‍🧑 <strong>Build a Community</strong> Engage verified users, religious leaders, and the public to amplify the movement.
+
           </li>
         </ul>
       </div>
@@ -272,7 +278,7 @@
 
   <section class="aim-section">
     <div class="aim-container">
-      <h2 class="aim-title">
+      <h2 class="aim-title" id="faq-heading">
         What We Aim to Achieve
         <span class="subtitle">(हम क्या हासिल करना चाहते हैं?)</span>
       </h2>
@@ -316,7 +322,7 @@
     <div class="parallax parallax-1">Rise Against Communism</div>
 
     <div class="content">
-        <p>Communism has historically led to economic downfall, restricted freedom, and oppression. Understanding its impact is crucial to ensuring the prosperity of future generations.</p>
+        <p>Communism has historically led to economic downfall, restricted freedom and its impact is crucial to ensuring the prosperity of future generations.</p>
     </div>
 
     <div class="parallax parallax-2">Freedom Over Control</div>
@@ -339,7 +345,7 @@
     <div class="row align-items-center">
       <!-- Left Content -->
       <div class="col-lg-7 mb-4">
-        <h2 class="fw-bold text-dark"><i class="fas fa-hands-helping"></i> Get Involved <span class="text-primary">(शामिल हों)</span></h2>
+        <h2 class="fw-bold text-dark" id="faq-heading"><i class="fas fa-hands-helping"></i> Get Involved <span class="text-primary">(शामिल हों)</span></h2>
         <div class="mt-4">
           <div class="card involved-card p-3 border-0 shadow-sm">
             <h3 class="text-dark">🚀 Volunteer</h3>
@@ -374,7 +380,7 @@
 
   <div class="container" id="resouces">
     <!-- <br/><br/><br/> -->
-    <div class="header">Resources</div>
+    <div class="header"><h2 id="faq-heading">Resources</h2></div>
     <p class="subtext">Curated content for fostering peace and religious tolerance.</p>
 
     <div class="highlight-section">
