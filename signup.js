@@ -10,9 +10,6 @@ import {
   updateProfile,
 } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
 
-
-
-
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -28,37 +25,41 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-const auth = getAuth(app);  // You need to get the auth instance properly here
+const auth = getAuth(app); // You need to get the auth instance properly here
 
 const submitSignup = document.getElementById("submit-signup");
-submitSignup.addEventListener("click",async function (event) {
-console.log("submit-signup call")
+submitSignup.addEventListener("click", async function (event) {
+  console.log("submit-signup call");
 
-event.preventDefault();
-console.log("submit-signup call")
-  
+  event.preventDefault();
+  console.log("submit-signup call");
+
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
   const fullname = document.getElementById("full-name").value;
-  
-  try{
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+
+  try {
+    const userCredential = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
     alert("Account created successfully!");
     const user = userCredential.user;
 
     // Update the user's profile with the full name
     await updateProfile(user, {
-      displayName: fullname // Set the user's display name
+      displayName: fullname, // Set the user's display name
     });
-    console.log(user)
-    alert("Creating Account...");
-    window.location.href = "/register.html";
+    console.log(user);
+    // alert("Creating Account...");
+    window.location.href = "/index.html";
     // ...
-      }catch{
+  } catch(error) {
+    const errorCode = error.code;
+    const errorMessage = error.message;
 
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // console.log(error)
-        alert(errorMessage);
-      }
+    // console.log(error)
+    // alert(errorMessage);
+  }
 });

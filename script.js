@@ -263,7 +263,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Login/logout Auth 
+// Login/logout Auth Hide & Visible Buttons
 
 
 // Function to check if user is logged in
