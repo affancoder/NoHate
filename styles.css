@@ -26,6 +26,10 @@ body {
   color: white;
 }
 
+#authbtn button{
+  text-decoration: none;
+}
+
 /* Hero Section */
 
 .hero {
@@ -54,7 +58,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.3);
   z-index: 0;
 }
 
@@ -210,6 +214,60 @@ body {
     font-size: 16px;
   }
 }
+
+/* Happiness Section */
+
+#full-happiness-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full screen height */
+  overflow: hidden;
+}
+
+/* Video covers entire screen */
+#full-happiness-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Overlay for better readability */
+#full-happiness-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1); /* Semi-transparent overlay */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+/* Title styling */
+#full-happiness-title {
+  font-size: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Description styling */
+#full-happiness-text {
+  font-size: 18px;
+  max-width: 600px;
+  margin-top: 10px;
+}
+
 
 /* About us */
 
@@ -828,7 +886,6 @@ body {
 
 /* WHAT WE AIM TO ACHIEVE */
 
-/* Section Setup */
 .aim-section {
   background: #f9f9f9;
   padding: 80px 5%;
@@ -836,7 +893,6 @@ body {
   justify-content: center;
 }
 
-/* Container */
 .aim-container {
   max-width: 1150px;
   width: 100%;
@@ -937,6 +993,12 @@ body {
   .aim-card {
     flex-direction: column;
     text-align: center;
+    padding: 0;
+  }
+
+  .aim-section{
+    padding: 0;
+    margin: auto;
   }
 
   .aim-card img {
@@ -949,6 +1011,7 @@ body {
     display: flex;
     flex-direction: column;
   }
+
 }
 
 /* Get Evolved */
@@ -1431,6 +1494,21 @@ body {
     padding: 0px;
     margin: 40px 0px;
   }
+
+  /* Get evolved */
+
+  .custom-img{
+    display: none;
+    height: 160px;
+    width: 100%;
+    margin-top: 60px;
+  }
+
+  #evolved h2{
+    width: 100%;
+    padding: 0 !important;
+    font-size: 2em;
+  }
 }
 
 /* Robot Icon Animation */
@@ -1792,6 +1870,13 @@ body {
   height: 200px;
   object-fit: cover;
   border-radius: 8px;
+}
+
+#sharebtn{
+  display: flex;
+  justify-content: right;
+  text-decoration: none;
+  margin-top: -24px;
 }
 
 

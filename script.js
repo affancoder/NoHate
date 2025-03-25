@@ -199,19 +199,6 @@ window.addEventListener("scroll", function () {
   });
 });
 
-// logout
-
-document.getElementById("logoutBtn").addEventListener("click", () => {
-  auth
-    .signOut()
-    .then(() => {
-      alert("Logged out successfully!");
-      window.location.href = "login.html"; // Redirect after logout
-    })
-    .catch((error) => {
-      console.error("Logout Error: ", error);
-    });
-});
 
 // Blog & Resources functionalty
 
@@ -275,3 +262,58 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.reload(); // Refresh the page to reset everything
   });
 });
+
+// Login/logout Auth 
+
+
+// Function to check if user is logged in
+function isUserLoggedIn() {
+  return localStorage.getItem("isLoggedIn") === "true";
+}
+
+// Select buttons
+const loginBtn = document.getElementById("loginBtn");
+const logoutBtn = document.getElementById("logoutBtn");
+
+// Function to update UI based on login status
+function updateAuthButtons() {
+  if (isUserLoggedIn()) {
+      loginBtn.style.display = "none";
+      logoutBtn.style.display = "block";
+  } else {
+      loginBtn.style.display = "block";
+      logoutBtn.style.display = "none";
+  }
+}
+
+// Event listener for Login button
+if (loginBtn) {
+  loginBtn.addEventListener("click", function () {
+      localStorage.setItem("isLoggedIn", "true");
+      updateAuthButtons();
+
+      // Redirect to register.html after login
+      setTimeout(() => {
+          window.location.href = "register.html"; 
+      }, 100);
+  });
+}
+
+// Event listener for Logout button
+if (logoutBtn) {
+  logoutBtn.addEventListener("click", function () {
+      localStorage.removeItem("isLoggedIn");
+      updateAuthButtons();
+
+      // Redirect to index.html after logout
+      setTimeout(() => {
+          window.location.href = "index.html";
+      }, 100);
+  });
+}
+
+// Run on page load
+document.addEventListener("DOMContentLoaded", updateAuthButtons);
+
+
+
