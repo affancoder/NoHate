@@ -665,7 +665,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(45deg, #007bff, #00c6ff);
+  /* background: linear-gradient(45deg, #007bff, #00c6ff); */
   position: relative;
 }
 
@@ -1214,6 +1214,12 @@ body {
   #evolved {
     display: flex;
     flex-direction: column;
+  }
+
+  .auth-buttons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 
 }
