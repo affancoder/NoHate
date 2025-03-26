@@ -61,10 +61,13 @@
               <a class="nav-link active" href="#about">About</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link active" href="#complain">Complain</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link active" href="#educational-resources">Blog</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#contact">Contact</a>
+              <a class="nav-link active" href="#contact">Contact&nbsp;&nbsp;</a>
             </li>
 
             <li>
@@ -106,7 +109,7 @@
       </div>
     </section>
 
-    <!-- Feature Section -->
+    <!-- Mission Section -->
 
     <section id="mission" class="motive">
       <div class="motive-wrapper">
@@ -117,11 +120,14 @@
           <h2 class="motive-title">Our <span>Mission</span></h2>
           <p class="motive-text">
             **Nohate.in** is a dedicated initiative to combat communalism and
-            online hatred. Our mission is to identify and remove hateful content
-            from social media while addressing the root causes of religious
-            intolerance. We strive to foster harmony, promote unity, and
-            encourage mutual respect among all communities, ensuring a peaceful
-            and inclusive society.
+            online hatred. By identifying and removing hateful content from
+            social media, we address the root causes of religious intolerance.
+            India’s diverse religious landscape fosters both unity and tension,
+            often amplified by misinformation and political agendas. NoHate
+            counters this by leveraging technology, awareness campaigns, and
+            grassroots efforts to promote harmony, unity, and mutual respect,
+            ensuring a peaceful, inclusive, and hate-free digital and social
+            space for future generations.
           </p>
           <a href="#" class="motive-btn">Discover More</a>
         </div>
@@ -253,6 +259,88 @@
             </video>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Complaint Section -->
+    <div class="page-wrapper" id="complain">
+      <div class="container-main">
+        <div class="header-section">
+          <h1 class="title-main">File Your Complaint</h1>
+          <p class="subtitle-text">
+            We’re here to help you resolve your concerns quickly and efficiently
+          </p>
+        </div>
+        <section class="form-container">
+          <div class="input-container">
+            <form id="complaint-form">
+              <div class="input-group">
+                <label class="label-text" for="user-fullname">Full Name</label>
+                <input
+                  type="text"
+                  class="name-field"
+                  id="user-fullname"
+                  name="user_fullname"
+                  placeholder="Enter your full name"
+                  required
+                  autocomplete="name"
+                />
+              </div>
+
+              <div class="input-group">
+                <label class="label-text" for="user-emailaddr"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  class="email-field"
+                  id="user-emailaddr"
+                  name="user_emailaddr"
+                  placeholder="Enter your email"
+                  required
+                  autocomplete="email"
+                />
+              </div>
+
+              <div class="input-group">
+                <label class="label-text" for="complaint-details"
+                  >Complaint Details</label
+                >
+                <textarea
+                  class="complaint-box"
+                  id="complaint-details"
+                  name="complaint_details"
+                  placeholder="Describe your complaint"
+                  required
+                ></textarea>
+              </div>
+
+              <div class="input-group">
+                <label class="label-text" for="supporting-docs"
+                  >Supporting Document</label
+                >
+                <input
+                  type="file"
+                  class="file-upload"
+                  id="supporting-docs"
+                  name="supporting_docs"
+                  accept=".pdf,.doc,.docx,.jpg,.png"
+                />
+              </div>
+
+              <button type="submit" class="submit-button">
+                Submit Complaint
+              </button>
+            </form>
+          </div>
+          <div class="image-container">
+            <img
+              class="illustration-img"
+              src="/assets/complaint-hate.jpg"
+              alt="Complaint Illustration"
+            />
+          </div>
+        </section>
       </div>
     </div>
 
