@@ -26,7 +26,7 @@ body {
   color: white;
 }
 
-#authbtn button{
+#authbtn button {
   text-decoration: none;
 }
 
@@ -269,7 +269,6 @@ body {
   margin-top: 10px;
 }
 
-
 /* About us */
 
 .mission-container {
@@ -419,9 +418,7 @@ body {
   }
 }
 
-
 /* Call to Action Section */
-
 
 .full-width-bg {
   width: 100%;
@@ -527,8 +524,6 @@ body {
   border-radius: 10px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
-
-
 
 /* Responsive Design */
 @media (max-width: 1024px) {
@@ -639,7 +634,7 @@ body {
   display: flex;
   background-color: #fff;
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   overflow: hidden;
   margin-top: 40px;
   margin-bottom: 40px;
@@ -673,7 +668,7 @@ body {
   max-width: 100%;
   height: 100%;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
 }
 
@@ -730,21 +725,21 @@ body {
 .name-field:focus {
   border-color: #007bff;
   background-color: #fff;
-  box-shadow: 0 0 5px rgba(0,123,255,0.3);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
   outline: none;
 }
 
 .email-field:focus {
   border-color: #007bff;
   background-color: #fff;
-  box-shadow: 0 0 5px rgba(0,123,255,0.3);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
   outline: none;
 }
 
 .complaint-box:focus {
   border-color: #007bff;
   background-color: #fff;
-  box-shadow: 0 0 5px rgba(0,123,255,0.3);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
   outline: none;
 }
 
@@ -777,32 +772,30 @@ body {
 .submit-button:hover {
   background: linear-gradient(45deg, #0056b3, #009cff);
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0,123,255,0.4);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
 }
 
 @media (max-width: 768px) {
   .form-container {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   .input-container {
-      padding-top: 25px;
-      padding-bottom: 25px;
-      padding-left: 25px;
-      padding-right: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
   }
 
   .image-container {
-      min-height: 250px;
-      /* padding: 20px; */
+    min-height: 250px;
+    /* padding: 20px; */
   }
 
   .title-main {
-      font-size: 28px;
+    font-size: 28px;
   }
 }
-
-
 
 /* What we do */
 
@@ -839,7 +832,8 @@ body {
   transition: transform 0.4s ease-in-out;
 }
 .what-we-do-image img:hover {
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
+  cursor: pointer;
 }
 .what-we-do-content {
   flex: 1;
@@ -889,7 +883,7 @@ body {
     padding: 10px;
   }
 
-  .what-we-do img{
+  .what-we-do img {
     max-width: 100%;
     height: 200px;
   }
@@ -1200,7 +1194,7 @@ body {
     padding: 0;
   }
 
-  .aim-section{
+  .aim-section {
     padding: 0;
     margin: auto;
   }
@@ -1221,7 +1215,6 @@ body {
     justify-content: center;
     width: 100%;
   }
-
 }
 
 /* Get Evolved */
@@ -1234,7 +1227,7 @@ body {
   border-radius: 10px;
 }
 
-#evolved p{
+#evolved p {
   /* color: #0056b3; */
   font-weight: 500;
 }
@@ -1253,6 +1246,106 @@ body {
 .involved-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Upcoming Series */
+
+#upcomingSeriesSection {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Background Video */
+#backgroundVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(90%);
+}
+
+/* Overlay Section */
+#seriesOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Heading Styling */
+#seriesHeading {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  /* background: linear-gradient(90deg, #ff8a00, #da1b60); */
+  /* background: linear-gradient(to right, #0a0f2c, #002855, #004e89); */
+  background-color: white;
+  color: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Series Cards Grid */
+#seriesContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  width: 90%;
+}
+
+/* Series Card Styling */
+.series-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 12px;
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.series-card:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.series-card h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ff8a00;
+  color: white;
+}
+
+.series-card p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #seriesHeading {
+    font-size: 2.5rem;
+  }
+
+  #seriesContainer {
+    max-height: 100%;
+    grid-template-columns: 1fr;
+  }
 }
 
 /* General Section Styling */
@@ -1686,7 +1779,6 @@ body {
   .comment-content {
     flex-direction: column; /* Stack text and image */
     align-items: center;
-
   }
 
   .comment-image {
@@ -1707,14 +1799,14 @@ body {
 
   /* Get evolved */
 
-  .custom-img{
+  .custom-img {
     display: none;
     height: 160px;
     width: 100%;
     margin-top: 60px;
   }
 
-  #evolved h2{
+  #evolved h2 {
     width: 100%;
     padding: 0 !important;
     font-size: 2em;
@@ -1938,7 +2030,7 @@ body {
 
 /* General Styles */
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background: #f4f4f9;
   color: #333;
   margin: 0;
@@ -2027,9 +2119,15 @@ body {
   margin-bottom: 10px;
 }
 
-[data-tag="education"] { background: #2b6cb0; }
-[data-tag="guide"] { background: #38a169; }
-[data-tag="community"] { background: #d69e2e; }
+[data-tag="education"] {
+  background: #2b6cb0;
+}
+[data-tag="guide"] {
+  background: #38a169;
+}
+[data-tag="community"] {
+  background: #d69e2e;
+}
 
 .resource-date {
   display: block;
@@ -2065,7 +2163,6 @@ body {
   color: #1e4f91;
 }
 
-
 .blog-box {
   background-color: white;
   color: black;
@@ -2082,13 +2179,12 @@ body {
   border-radius: 8px;
 }
 
-#sharebtn{
+#sharebtn {
   display: flex;
   justify-content: right;
   text-decoration: none;
   margin-top: -24px;
 }
-
 
 @media (max-width: 768px) {
   html,

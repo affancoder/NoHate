@@ -273,7 +273,11 @@
         </div>
         <section class="form-container">
           <div class="input-container">
-            <form id="complaint-form">
+            <form
+              action="https://formspree.io/f/mgvaebvl"
+              method="POST"
+              id="complaint-form"
+            >
               <div class="input-group">
                 <label class="label-text" for="user-fullname">Full Name</label>
                 <input
@@ -319,6 +323,14 @@
                 <label class="label-text" for="supporting-docs"
                   >Supporting Document</label
                 >
+                <input
+                  type="url"
+                  class="email-field"
+                  id="user-emailaddr"
+                  name="file_link"
+                  placeholder="  Paste File Link (Google Drive, Dropbox, source link etc.)"
+                  required
+                /><br>Or<br/>
                 <input
                   type="file"
                   class="file-upload"
@@ -777,6 +789,39 @@
       </div>
     </section>
 
+    <!-- Upcoming Series -->
+
+    <section id="upcomingSeriesSection">
+    <video id="backgroundVideo" autoplay muted loop>
+        <source src="/assets/comingsoon.mp4" type="video/mp4">
+    </video>
+    
+    <div id="seriesOverlay">
+        <h2 id="seriesHeading">Upcoming Series</h2>
+        <div id="seriesContainer">
+            <div id="seriesCardEkta" class="series-card">
+                <h3 id="seriesTitleEkta">Ekta Ki Kahani</h3>
+                <p id="seriesDescriptionEkta">A journey of unity and togetherness through inspiring stories.</p>
+            </div>
+            
+            <div id="seriesCardHumanity" class="series-card">
+                <h3 id="seriesTitleHumanity">Humanity Wins</h3>
+                <p id="seriesDescriptionHumanity">Showcasing the triumph of kindness and compassion.</p>
+            </div>
+            
+            <div id="seriesCardHappiness" class="series-card">
+                <h3 id="seriesTitleHappiness">Happiness of the Day</h3>
+                <p id="seriesDescriptionHappiness">Bringing heartwarming moments to brighten your day.</p>
+            </div>
+            
+            <div id="seriesCardSurprise" class="series-card">
+                <h3 id="seriesTitleSurprise">More Surprises Await</h3>
+                <p id="seriesDescriptionSurprise">Stay tuned for exciting new series coming soon!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
     <!-- Safe Comment checker -->
 
     <div class="commentcontainer">
@@ -967,6 +1012,9 @@
       </section>
     </div>
 
+    <!-- Suggestion -->
+
+
     <!-- Contact Form -->
 
     <section class="contact-section" id="contact">
@@ -990,7 +1038,7 @@
             required
           />
 
-          <label for="user-message">Your Message:</label>
+          <label for="user-message">Feedback:</label>
           <textarea
             id="user-message"
             name="user_message"

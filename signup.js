@@ -44,7 +44,7 @@ submitSignup.addEventListener("click", async function (event) {
       email,
       password
     );
-    alert("Account created successfully!");
+    // alert("Account created successfully!");
     const user = userCredential.user;
 
     // Update the user's profile with the full name
@@ -52,7 +52,7 @@ submitSignup.addEventListener("click", async function (event) {
       displayName: fullname, // Set the user's display name
     });
     console.log(user);
-    // alert("Creating Account...");
+    alert(`Account created successfully! Welcome, ${user.displayName}!`);
     window.location.href = "/index.html";
     // ...
   } catch(error) {
