@@ -214,6 +214,13 @@ body {
   .motive-text {
     font-size: 16px;
   }
+
+  .motive-img img {
+    height: 160px;
+    width: 100%;
+    border-radius: 15px;
+    transition: transform 0.4s ease-in-out;
+  }
 }
 
 /* Happiness Section */
@@ -279,7 +286,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 5rem;
-  height: 700px;
+  height: 100vh;
   width: 100%;
 }
 
@@ -1200,6 +1207,8 @@ body {
   }
 
   .aim-card img {
+    height: 120px;
+    width: 120px;
     margin-bottom: 10px;
   }
 
@@ -1267,7 +1276,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(90%);
+  filter: brightness(80%);
 }
 
 /* Overlay Section */
@@ -1645,6 +1654,7 @@ body {
   display: flex;
   justify-content: center;
   padding: 50px;
+  /* max-width: 1150px; */
 }
 
 /* Glassmorphism Container */
@@ -1659,10 +1669,10 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-.comment-box:hover {
+/* .comment-box:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-}
+} */
 
 /* Heading */
 .comment-box h2 {
