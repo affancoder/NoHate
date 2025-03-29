@@ -17,6 +17,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 // Get the submit button
+
 document.getElementById("submit").addEventListener("click", function (event) {
   event.preventDefault();
 
@@ -26,6 +27,11 @@ document.getElementById("submit").addEventListener("click", function (event) {
 
   if (!email || !password) {
     alert("Please enter both email and password.");
+    return;
+  }
+
+  if (password.length < 6) {
+    alert("Password must be at least six characters long.");
     return;
   }
 

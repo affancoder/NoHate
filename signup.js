@@ -27,39 +27,61 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app); // You need to get the auth instance properly here
 
+
 const submitSignup = document.getElementById("submit-signup");
+
 submitSignup.addEventListener("click", async function (event) {
   console.log("submit-signup call");
 
   event.preventDefault();
   console.log("submit-signup call");
 
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-  const fullname = document.getElementById("full-name").value;
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+  const fullname = document.getElementById("full-name").value.trim();
+
+  if (!email || !password || !fullname) {
+    alert("Please fill in all fields.");
+    return;
+  }
+
+  if (password.length < 6) {
+    alert("Password must be at least six characters long.");
+    return;
+  }
 
   try {
-    const userCredential = await createUserWithEmailAndPassword(
-      auth,
-      email,
-      password
-    );
-    // alert("Account created successfully!");
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
 
     // Update the user's profile with the full name
     await updateProfile(user, {
       displayName: fullname, // Set the user's display name
     });
+
     console.log(user);
     alert(`Account created successfully! Welcome, ${user.displayName}!`);
     window.location.href = "/index.html";
-    // ...
-  } catch(error) {
+
+  } catch (error) {
     const errorCode = error.code;
     const errorMessage = error.message;
+    
+    console.error("Signup error:", errorCode, errorMessage);
 
-    // console.log(error)
-    // alert(errorMessage);
+    // Handle authentication errors
+    switch (errorCode) {
+      case "auth/email-already-in-use":
+        alert("This email is already registered. Please use a different email or log in.");
+        break;
+      case "auth/invalid-email":
+        alert("Invalid email format. Please enter a valid email.");
+        break;
+      case "auth/weak-password":
+        alert("Password is too weak. It must be at least six characters long.");
+        break;
+      default:
+        alert("Error: " + errorMessage);
+    }
   }
 });
