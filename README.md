@@ -6,7 +6,7 @@
 
 **🌍 NoHate.in – Uniting People, Eliminating Hate!**  
 
-NoHate.in is a powerful initiative dedicated to **fighting communalism** by removing **hateful content** from social media and addressing the **root causes of religious hate**. Our mission is to create a **safe, respectful, and united** digital space where people from **all faiths and backgrounds** can coexist peacefully.  
+Developed Nohate, a web application designed to combat online hate speech and promote unity across different religions. Implemented features for user awareness on hate traps, content reporting, and access to insightful blogs and articles. Built a modern, responsive UI/UX with GSAP animations and parallax effects for an engaging user experience. Integrated Firebase authentication for secure login/sign-up functionality. Ensured seamless performance across devices with advanced front-end development techniques.  
 
 ✨ **What We Do:**  
 🔹 **🚫 Removing Hate Speech** – We actively identify and report **harmful, divisive, and hateful** content on social media to maintain a **positive digital environment**.  
