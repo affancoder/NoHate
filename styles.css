@@ -2453,20 +2453,60 @@ body:hover .custom-cursor {
 }
 
 @media (max-width: 768px) {
-  .sidebarMenu {
-    width: 220px;
+  .dashboardContainer {
+    flex-direction: column;
+    overflow-y: scroll;
   }
-  .contentSection {
-    margin-left: 220px;
-  }
-}
-@media (max-width: 480px) {
+
   .sidebarMenu {
     width: 100%;
     height: auto;
     position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+    text-align: center !important;
   }
+
+  .sidebarTitle {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .menuList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .menuItem {
+    padding: 10px;
+    font-size: 14px;
+  }
+
   .contentSection {
     margin-left: 0;
+    padding-top: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebarMenu {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .menuList {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menuItem {
+    width: 100%;
+    text-align: center;
   }
 }
