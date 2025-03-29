@@ -199,7 +199,6 @@ window.addEventListener("scroll", function () {
   });
 });
 
-
 // Blog & Resources functionalty
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -251,20 +250,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to switch to Guides
   guidesTab.addEventListener("click", function () {
-      blogSection.style.display = "none"; // Hide Blog Articles
-      guidesSection.style.display = "block"; // Show Guides
-      articlesTab.classList.remove("active");
-      guidesTab.classList.add("active");
+    blogSection.style.display = "none"; // Hide Blog Articles
+    guidesSection.style.display = "block"; // Show Guides
+    articlesTab.classList.remove("active");
+    guidesTab.classList.add("active");
   });
 
   // Function to switch to Blog Articles (refreshes the page)
   articlesTab.addEventListener("click", function () {
-      window.location.reload(); // Refresh the page to reset everything
+    window.location.reload(); // Refresh the page to reset everything
   });
 });
 
 // Login/logout Auth Hide & Visible Buttons
-
 
 // Function to check if user is logged in
 function isUserLoggedIn() {
@@ -278,42 +276,77 @@ const logoutBtn = document.getElementById("logoutBtn");
 // Function to update UI based on login status
 function updateAuthButtons() {
   if (isUserLoggedIn()) {
-      loginBtn.style.display = "none";
-      logoutBtn.style.display = "block";
+    loginBtn.style.display = "none";
+    logoutBtn.style.display = "block";
   } else {
-      loginBtn.style.display = "block";
-      logoutBtn.style.display = "none";
+    loginBtn.style.display = "block";
+    logoutBtn.style.display = "none";
   }
 }
 
 // Event listener for Login button
 if (loginBtn) {
   loginBtn.addEventListener("click", function () {
-      localStorage.setItem("isLoggedIn", "true");
-      updateAuthButtons();
+    localStorage.setItem("isLoggedIn", "true");
+    updateAuthButtons();
 
-      // Redirect to register.html after login
-      setTimeout(() => {
-          window.location.href = "register.html"; 
-      }, 100);
+    // Redirect to register.html after login
+    setTimeout(() => {
+      window.location.href = "register.html";
+    }, 100);
   });
 }
 
 // Event listener for Logout button
 if (logoutBtn) {
   logoutBtn.addEventListener("click", function () {
-      localStorage.removeItem("isLoggedIn");
-      updateAuthButtons();
+    localStorage.removeItem("isLoggedIn");
+    updateAuthButtons();
 
-      // Redirect to index.html after logout
-      setTimeout(() => {
-          window.location.href = "index.html";
-      }, 100);
+    // Redirect to index.html after logout
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 100);
   });
 }
 
 // Run on page load
 document.addEventListener("DOMContentLoaded", updateAuthButtons);
 
+// Dashboard styling
 
+gsap.from(".sidebarMenu", {
+  duration: 1,
+  x: -260,
+  opacity: 0,
+  ease: "power2.out",
+});
+gsap.from(".topNavbar", {
+  duration: 1,
+  y: -50,
+  opacity: 0,
+  ease: "power2.out",
+  delay: 0.5,
+});
+gsap.from(".cardsContainer .card", {
+  duration: 1,
+  opacity: 0,
+  scale: 0.9,
+  stagger: 0.2,
+  ease: "back.out(1.7)",
+  delay: 1,
+});
 
+const ctx = document.getElementById("reportChart").getContext("2d");
+const chart = new Chart(ctx, {
+  type: "doughnut",
+  data: {
+    labels: ["Resolved", "Pending"],
+    datasets: [
+      {
+        data: [85, 35],
+        backgroundColor: ["#27ae60", "#e74c3c"],
+      },
+    ],
+  },
+});
