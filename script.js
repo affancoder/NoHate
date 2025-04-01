@@ -350,3 +350,36 @@ const chart = new Chart(ctx, {
     ],
   },
 });
+
+// Complain Data Collection
+
+document.getElementById("complaint-form").addEventListener("submit", async function (event) {
+  event.preventDefault(); // Stop default submission temporarily
+
+  let formData = new FormData(this);
+  let data = Object.fromEntries(formData.entries());
+
+  // ✅ Send data to Google Sheets
+  fetch("https://script.google.com/macros/s/AKfycbxXtuz2JWuPW3SfRyyKh1xtj-U1RMaVGI35yhQnfBuJJkLcL1vzuStn31whFszD8sCf/exec", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: { "Content-Type": "application/json" }
+  }).then(response => console.log("Data sent to Google Sheets"));
+
+  // ✅ Now submit the form to Formspree
+  this.submit();
+});
+
+// const scriptURL = "https://script.google.com/macros/s/AKfycbwCFZB00606Bf7HdmKgqkMc84Khs_Q67yUSpy8HJM5p5j5vCKB3txxj9cadGgCbmqgK/exec";
+
+// const form = document.forms['product'];
+
+// form.addEventListener("submit", (e) => {
+//   e.preventDdefault();
+//   fetch(scriptURL, { method: "POST", body: new FormData(form) })
+//     .then((response) => alert("Thank You, form submitted successfully"))
+//     .then(() => {
+//       window.location.reload();
+//     })
+//     .catch((error) => console.log("Error", error.message));
+// });

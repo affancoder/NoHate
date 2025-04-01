@@ -93,7 +93,7 @@
     <!-- Hero section -->
 
     <section class="hero">
-      <img src="/assets/right_side_img.jpg" alt="Hero Image" />
+      <img src="assets/right_side_img.jpg" alt="Hero Image" />
       <div class="overlay"></div>
       <div class="content">
         <h1>Welcome to NoHate!</h1>
@@ -277,6 +277,7 @@
               action="https://formspree.io/f/mgvaebvl"
               method="POST"
               id="complaint-form"
+              name="product"
             >
               <div class="input-group">
                 <label class="label-text" for="user-fullname">Full Name</label>
@@ -356,6 +357,27 @@
         </section>
       </div>
     </div>
+
+    <script>
+      document
+        .getElementById("complaint-form")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault(); // Prevent default submission
+
+          let formData = new FormData(this);
+          let formObject = {};
+          formData.forEach((value, key) => (formObject[key] = value));
+
+          // ✅ Send data to Google Sheets
+          fetch("https://script.google.com/macros/s/AKfycbwchmVnEm0QcvOPpg2kWvocqnYi2snaMNjlt7qYOQ47pYtdnJcPMaOZwu_GtBK_RFXR/exec", {
+            method: "POST",
+            body: new URLSearchParams(formObject), // Ensure correct format
+          }).then((response) => console.log("Data sent to Google Sheets"));
+
+          // ✅ Now submit the form to Formspree
+          this.submit();
+        });
+    </script>
 
     <!-- What we do -->
     <div id="what-we-do">
