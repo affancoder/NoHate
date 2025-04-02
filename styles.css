@@ -1623,7 +1623,8 @@ body {
   color: #f8f9fa;
 }
 
-/* Style for the Scroll to Top button */
+/* Scroll to Top button */
+
 #scrollToTop {
   position: fixed;
   bottom: 30px;
@@ -1848,8 +1849,9 @@ body {
   }
 
   .comment-image {
-    width: 180px; /* Slightly smaller image for mobiles */
-    margin-top: 15px;
+    max-width: 100%;
+    height: 160px;
+    margin-top: 20px;
   }
 
   .comment-box {
@@ -2265,12 +2267,36 @@ body {
     align-items: center;
   }
 
+  /* Call */
+
+  .content-section-unity h3{
+    font-size: 1.01rem;
+  }
+
+  .video-unity{
+    height: 160px;
+    max-width: 100%;
+  }
+
+  .what-we-do-content h2{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #004e89;
+    
+  }
+
+  #evolved h2{
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
   /* faqs */
 
-  #faq-heading {
+  #faq-heading{
     width: 100%;
     padding: 0;
     margin: 20px 0;
+    font-size: 1.2rem;
   }
 
   .faq-section {
@@ -2338,6 +2364,18 @@ body {
   #identity-section {
     height: 100%;
   }
+
+  #resources-title{
+    font-size: 1.6rem;
+    color: #004e89;
+  }
+
+  #seriesHeading{
+    font-size: 2rem;
+    margin: auto;
+  }
+
+
 }
 
 /* Custom Cursor */
