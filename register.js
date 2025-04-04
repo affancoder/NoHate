@@ -1,6 +1,10 @@
 // Import Firebase SDKs
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
+import {
+  getAuth,
+  sendPasswordResetEmail,
+  signInWithEmailAndPassword,
+} from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
 
 // Firebase configuration
 const firebaseConfig = {
@@ -51,7 +55,9 @@ document.getElementById("submit").addEventListener("click", function (event) {
           alert("Incorrect email or password. Please try again.");
           break;
         case "auth/user-not-found":
-          alert("No account found with this email. Please check your email or sign up.");
+          alert(
+            "No account found with this email. Please check your email or sign up."
+          );
           break;
         case "auth/wrong-password":
           alert("Incorrect password. Please try again.");
@@ -65,5 +71,24 @@ document.getElementById("submit").addEventListener("click", function (event) {
         default:
           alert("Error: " + error.message);
       }
+    });
+});
+
+// Reset
+
+const reset = document.getElementById("reset");
+reset.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  const email = document.getElementById("email").value;
+
+  sendPasswordResetEmail(auth, email)
+    .then(() => {
+      alert("Check your email to reset password");
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      alert(errorMessage);
     });
 });
