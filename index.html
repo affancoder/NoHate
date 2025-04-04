@@ -60,9 +60,9 @@
             <li class="nav-item">
               <a class="nav-link active" href="#about">About</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link active" href="#complain">Complain</a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a class="nav-link active" href="#educational-resources">Blog</a>
             </li>
@@ -369,10 +369,13 @@
           formData.forEach((value, key) => (formObject[key] = value));
 
           // ✅ Send data to Google Sheets
-          fetch("https://script.google.com/macros/s/AKfycbwchmVnEm0QcvOPpg2kWvocqnYi2snaMNjlt7qYOQ47pYtdnJcPMaOZwu_GtBK_RFXR/exec", {
-            method: "POST",
-            body: new URLSearchParams(formObject), // Ensure correct format
-          }).then((response) => console.log("Data sent to Google Sheets"));
+          fetch(
+            "https://script.google.com/macros/s/AKfycbwchmVnEm0QcvOPpg2kWvocqnYi2snaMNjlt7qYOQ47pYtdnJcPMaOZwu_GtBK_RFXR/exec",
+            {
+              method: "POST",
+              body: new URLSearchParams(formObject), // Ensure correct format
+            }
+          ).then((response) => console.log("Data sent to Google Sheets"));
 
           // ✅ Now submit the form to Formspree
           this.submit();
@@ -383,7 +386,11 @@
     <div id="what-we-do">
       <div class="what-we-do">
         <div class="what-we-do-image">
-          <img src="/assets/whatwedo.jpg" alt="Community Work" />
+          <!-- <img src="/assets/whatwedo.jpg" alt="Community Work" /> -->
+          <video autoplay loop muted playsinline>
+            <source src="/assets/whatwedo-img.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
         <div class="what-we-do-content">
           <h2>🌍 What We Do | हम क्या करते हैं?</h2>
