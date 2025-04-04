@@ -773,6 +773,33 @@ body {
   box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
 }
 
+.rating-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: left;
+  gap: 8px; /* Proper spacing */
+}
+.rating input {
+  display: none;
+}
+.rating label {
+  font-size: 35px;
+  color: gray;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+  color: gold;
+}
+
 @media (max-width: 768px) {
   .form-container {
     flex-direction: column;
@@ -2514,6 +2541,12 @@ body:hover .custom-cursor {
   list-style: none;
   padding: 0;
 }
+
+.menuList a{
+  text-decoration: none;
+  color: white;
+}
+
 .menuItem {
   padding: 15px;
   display: flex;
