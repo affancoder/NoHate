@@ -1159,7 +1159,7 @@ body {
 
 /* Description */
 .aim-description {
-  font-size: 18px;
+  font-size: 14px;
   color: #555;
   background: #f1f5f9;
   padding: 15px;
@@ -1273,12 +1273,14 @@ body {
 }
 
 #evolved h3 {
+  font-size: 1.3rem;
+  color: #004e89 !important;
   text-align: left;
   margin-bottom: 10px;
 }
 
 #evolved p {
-  color: black;
+  color: #333;
   font-weight: 500;
   font-size: 1rem;
   text-align: left;
