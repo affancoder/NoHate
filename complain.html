@@ -1,206 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nohate - Complain against hate online</title>
-    <link rel="stylesheet" href="styles.css" />
-    <!-- logo -->
-    <link rel="shortcut icon" href="favicon.jpg" type="image/x-icon" />
-    <!-- bootstrap -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  </head>
-  <body>
-    <!-- Complaint Section -->
-    <div class="page-wrapper" id="complain">
-      <div class="container-main">
-        <div class="header-section">
-          <h1 class="title-main">File Your Complaint</h1>
-          <p class="subtitle-text">
-            We’re here to help you resolve your concerns quickly and efficiently
-          </p>
-        </div>
-        <section class="form-container">
-          <div class="input-container">
-            <form
-              action="https://formspree.io/f/mgvaebvl"
-              method="POST"
-              id="complaint-form"
-              name="product"
-            >
-              <div class="input-group">
-                <label class="label-text" for="user-fullname">📝 Full Name</label>
-                <input
-                  type="text"
-                  class="name-field"
-                  id="user-fullname"
-                  name="user_fullname"
-                  placeholder="Enter your full name"
-                  required
-                  autocomplete="name"
-                />
-              </div>
 
-              <div class="input-group">
-                <label class="label-text" for="user-emailaddr"
-                  >📧 Email Address</label
-                >
-                <input
-                  type="email"
-                  class="email-field"
-                  id="user-emailaddr"
-                  name="user_emailaddr"
-                  placeholder="Enter your email"
-                  required
-                  autocomplete="email"
-                />
-              </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nohate - Complain against hate online</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- logo -->
+  <link rel="shortcut icon" href="favicon.jpg" type="image/x-icon" />
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
 
-              <div class="input-group">
-                <label class="label-text" for="complaint-details"
-                  >💬 Complaint Details</label
-                >
-                <textarea
-                  class="complaint-box"
-                  id="complaint-details"
-                  name="complaint_details"
-                  placeholder="e.g., religious slur, fake news"
-                  required
-                ></textarea>
-              </div>
+<body>
+  <!-- Complaint Section -->
 
-              <div class="input-group">
-                <label class="label-text" for="hate-category">🕊️ What kind of religious hate do you want to report?</label>
-                <select id="hate-category" name="hate_category" required class="select-field">
-                  <option value="" disabled selected>Select a category</option>
-                  <option value="discrimination">Religious Discrimination</option>
-                  <option value="hate_speech">Religious Hate Speech</option>
-                  <option value="violence">Religious Violence or Threats</option>
-                  <option value="online_abuse">Online Religious Abuse</option>
-                  <option value="vandalism">Vandalism of Religious Places</option>
-                  <option value="misinformation">Religious Misinformation</option>
-                  <option value="others">Other (please specify in comments)</option>
-                </select>
-              </div>
-              
-              
-
-              <div class="input-group">
-                <label class="label-text" for="supporting-docs"
-                  >🔗 Supporting Document</label
-                >
-                <input
-                  type="url"
-                  class="email-field"
-                  id="user-emailaddr"
-                  name="file_link"
-                  placeholder="  Paste File Link (Google Drive, Dropbox, source link etc.)"
-                  required
-                />
-                <div class="input-group" id="call">
-                  <label class="label-text">📞 Can we contact you?</label>
-                  <div class="contact-options">
-                    <label>
-                      <input type="radio" name="can_contact" value="yes" required />
-                      ✅ Yes
-                    </label>
-                    <label>
-                      <input type="radio" name="can_contact" value="no" />
-                      ❌ No
-                    </label>
-                  </div>
-                </div>
-                
-                <!-- <br />Or<br />
-                  <input
-                    type="file"
-                    class="file-upload"
-                    id="supporting-docs"
-                    name="supporting_docs"
-                    accept=".pdf,.doc,.docx,.jpg,.png"
-                  /> -->
-              </div>
-
-              <button type="submit" class="submit-button">
-                Submit Complaint
-              </button>
-            </form>
-          </div>
-          <div class="image-container">
-            <img
-              class="illustration-img"
-              src="/assets/complaint-hate.jpg"
-              alt="Complaint Illustration"
-            />
-          </div>
-        </section>
+  <div class="page-wrapper" id="complain">
+    <div class="container-main">
+      <div class="header-section">
+        <h1 class="title-main">File Your Complaint</h1>
+        <p class="subtitle-text">
+          We’re here to help you resolve your concerns quickly and efficiently
+        </p>
       </div>
+
+      <section class="form-container">
+        <div class="input-container">
+          <form
+            action="https://script.google.com/macros/s/AKfycby2lR5Cj0GF9k5H6I1bbP_bfByjQhJVb5-RSAEltdmv3wE36wpGJTWFR-OAxmo3HrrP/exec"
+            id="complaint-form" name="product" enctype="multipart/form-data">
+            <div class="input-group">
+              <label class="label-text" for="user-fullname">📝 Full Name</label>
+              <input type="text" class="name-field" id="user-fullname" name="user_fullname"
+                placeholder="Enter your full name" required autocomplete="name" />
+            </div>
+
+            <div class="input-group">
+              <label class="label-text" for="user-emailaddr">📧 Email Address</label>
+              <input type="email" class="email-field" id="user-emailaddr" name="user_emailaddr"
+                placeholder="Enter your email" required autocomplete="email" />
+            </div>
+
+            <div class="input-group">
+              <label class="label-text" for="complaint-details">💬 Complaint Details</label>
+              <textarea class="complaint-box" id="complaint-details" name="complaint_details"
+                placeholder="e.g., religious slur, fake news" required></textarea>
+            </div>
+
+            <div class="input-group">
+              <label class="label-text" for="hate-category">
+                🕊️ What kind of religious hate do you want to report?
+              </label>
+              <select id="hate-category" name="hate_category" required class="select-field">
+                <option value="" disabled selected>Select a category</option>
+                <option value="discrimination">
+                  Religious Discrimination
+                </option>
+                <option value="hate_speech">Religious Hate Speech</option>
+                <option value="violence">
+                  Religious Violence or Threats
+                </option>
+                <option value="online_abuse">Online Religious Abuse</option>
+                <option value="vandalism">
+                  Vandalism of Religious Places
+                </option>
+                <option value="misinformation">
+                  Religious Misinformation
+                </option>
+                <option value="others">
+                  Other (please specify in comments)
+                </option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label class="label-text" for="supporting-docs">🔗 Supporting Document</label>
+              <input type="url" class="email-field" name="file_link"
+                placeholder="Paste File Link (Google Drive, Dropbox, source link etc.)" required />
+            </div>
+
+            <!-- File Upload -->
+            <div class="input-group">
+              <label class="label-text" for="supporting-docs">🖼️ Upload Supporting Image</label>
+              <input type="file" id="supporting-docs" accept="image/*" required />
+            </div>
+
+            <div class="input-group" id="call">
+              <label class="label-text">📞 Can we contact you?</label>
+              <div class="contact-options">
+                <label>
+                  <input type="radio" name="can_contact" value="yes" required />
+                  ✅ Yes
+                </label>
+                <label>
+                  <input type="radio" name="can_contact" value="no" />
+                  ❌ No
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" class="submit-button">
+              Submit Complaint
+            </button>
+          </form>
+        </div>
+
+        <div class="image-container">
+          <img class="illustration-img" src="/assets/complaint-hate.jpg" alt="Complaint Illustration" />
+        </div>
+      </section>
     </div>
+  </div>
 
-    <script>
-      document
-        .getElementById("complaint-form")
-        .addEventListener("submit", async function (event) {
-          event.preventDefault();
+  <script>
 
-          let form = this;
-          let formData = new FormData(form);
-          let formObject = {};
-          formData.forEach((value, key) => (formObject[key] = value));
+    document.getElementById("complaint-form").addEventListener("submit", async function (e) {
+      e.preventDefault();
 
-          let submitButton = form.querySelector(".submit-button");
+      const form = e.target;
+      const submitButton = form.querySelector("button[type='submit']");
+      const originalText = submitButton.innerHTML;
 
-          // Disable submit button
-          submitButton.disabled = true;
-          submitButton.innerText = "Submitting...";
+      submitButton.disabled = true;
+      submitButton.innerHTML = "Submitting... ⏳";
 
-          try {
-            // Send data to Google Sheets
-            let googleResponse = await fetch(
-              "https://script.google.com/macros/s/AKfycbzY9dYrk_6fQhwIRBE5I3_T1CXWMd5lT9QPOQKKO4r9iS0skY7YlhNvy4Nq6cs8vFJm/exec",
-              {
-                method: "POST",
-                body: new URLSearchParams(formObject),
-              }
-            );
+      const fileInput = document.getElementById("supporting-docs");
+      const file = fileInput.files[0];
 
-            if (googleResponse.ok) {
-              console.log("Data sent to Google Sheets");
-            } else {
-              console.log("Google Sheets submission failed");
-            }
+      const base64 = await new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onloadend = () => resolve(reader.result.split(',')[1]);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
 
-            // Submit to Formspree
-            form.submit();
-          } catch (error) {
-            console.error("Error submitting form:", error);
+      const formData = new FormData(form);
+      formData.append("image_base64", base64);
+      formData.append("image_name", file.name);
+
+      try {
+        const response = await fetch(
+          "https://script.google.com/macros/s/AKfycbwJ71mR7vuJXeEAJNIAQYPFw3BZn6i5tp4YNp91HuFsauglegRwQ2pmp_PGvdVBfbxg/exec",
+          {
+            method: "POST",
+            body: formData,
           }
+        );
 
-          // Re-enable the button
+        const result = await response.text();
+        alert(result);
+
+        submitButton.innerHTML = "Submitted ✅";
+      } catch (error) {
+        alert("Submission failed. Please try again.");
+        console.error(error);
+        submitButton.innerHTML = "Try Again ❌";
+      } finally {
+        setTimeout(() => {
+          submitButton.innerHTML = originalText;
           submitButton.disabled = false;
-          submitButton.innerText = "Submit Complaint";
-        });
-    </script>
+        }, 2000); // Wait 2 seconds then reset
+      }
+    });
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+
+  </script>
+
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
