@@ -44,7 +44,7 @@
               name="product"
             >
               <div class="input-group">
-                <label class="label-text" for="user-fullname">Full Name</label>
+                <label class="label-text" for="user-fullname">📝 Full Name</label>
                 <input
                   type="text"
                   class="name-field"
@@ -58,7 +58,7 @@
 
               <div class="input-group">
                 <label class="label-text" for="user-emailaddr"
-                  >Email Address</label
+                  >📧 Email Address</label
                 >
                 <input
                   type="email"
@@ -73,20 +73,36 @@
 
               <div class="input-group">
                 <label class="label-text" for="complaint-details"
-                  >Complaint Details</label
+                  >💬 Complaint Details</label
                 >
                 <textarea
                   class="complaint-box"
                   id="complaint-details"
                   name="complaint_details"
-                  placeholder="Describe your complaint"
+                  placeholder="e.g., religious slur, fake news"
                   required
                 ></textarea>
               </div>
 
               <div class="input-group">
+                <label class="label-text" for="hate-category">🕊️ What kind of religious hate do you want to report?</label>
+                <select id="hate-category" name="hate_category" required class="select-field">
+                  <option value="" disabled selected>Select a category</option>
+                  <option value="discrimination">Religious Discrimination</option>
+                  <option value="hate_speech">Religious Hate Speech</option>
+                  <option value="violence">Religious Violence or Threats</option>
+                  <option value="online_abuse">Online Religious Abuse</option>
+                  <option value="vandalism">Vandalism of Religious Places</option>
+                  <option value="misinformation">Religious Misinformation</option>
+                  <option value="others">Other (please specify in comments)</option>
+                </select>
+              </div>
+              
+              
+
+              <div class="input-group">
                 <label class="label-text" for="supporting-docs"
-                  >Supporting Document</label
+                  >🔗 Supporting Document</label
                 >
                 <input
                   type="url"
@@ -96,6 +112,20 @@
                   placeholder="  Paste File Link (Google Drive, Dropbox, source link etc.)"
                   required
                 />
+                <div class="input-group" id="call">
+                  <label class="label-text">📞 Can we contact you?</label>
+                  <div class="contact-options">
+                    <label>
+                      <input type="radio" name="can_contact" value="yes" required />
+                      ✅ Yes
+                    </label>
+                    <label>
+                      <input type="radio" name="can_contact" value="no" />
+                      ❌ No
+                    </label>
+                  </div>
+                </div>
+                
                 <!-- <br />Or<br />
                   <input
                     type="file"
@@ -142,7 +172,7 @@
           try {
             // Send data to Google Sheets
             let googleResponse = await fetch(
-              "https://script.google.com/macros/s/AKfycbwchmVnEm0QcvOPpg2kWvocqnYi2snaMNjlt7qYOQ47pYtdnJcPMaOZwu_GtBK_RFXR/exec",
+              "https://script.google.com/macros/s/AKfycbzY9dYrk_6fQhwIRBE5I3_T1CXWMd5lT9QPOQKKO4r9iS0skY7YlhNvy4Nq6cs8vFJm/exec",
               {
                 method: "POST",
                 body: new URLSearchParams(formObject),
@@ -167,34 +197,10 @@
         });
     </script>
 
-    <!-- <script>
-      document
-        .getElementById("complaint-form")
-        .addEventListener("submit", async function (event) {
-          event.preventDefault(); // Prevent default submission
-
-          let formData = new FormData(this);
-          let formObject = {};
-          formData.forEach((value, key) => (formObject[key] = value));
-
-          // ✅ Send data to Google Sheets
-          fetch(
-            "https://script.google.com/macros/s/AKfycbwchmVnEm0QcvOPpg2kWvocqnYi2snaMNjlt7qYOQ47pYtdnJcPMaOZwu_GtBK_RFXR/exec",
-            {
-              method: "POST",
-              body: new URLSearchParams(formObject), // Ensure correct format
-            }
-          ).then((response) => console.log("Data sent to Google Sheets"));
-
-          // ✅ Now submit the form to Formspree
-          this.submit();
-        });
-    </script> -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <!-- <script src="script.js"></script> -->
   </body>
 </html>
