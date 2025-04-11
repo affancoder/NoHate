@@ -27,31 +27,103 @@
   </head>
   <body>
     <div class="dashboardContainer">
-        <div class="sidebarMenu">
-            <div class="sidebarTitle">NoHate</div>
-            <ul class="menuList">
-                <a href="complain.html"><li class="menuItem"><i class="fas fa-plus"></i> Report Hate</li></a>
-                <li class="menuItem"><i class="fas fa-file-alt"></i> Report Status</li>
-                <li class="menuItem"><i class="fas fa-book"></i> How to Use</li>
-                <a href="https://docs.google.com/spreadsheets/d/11wBihCdlj7UbS4piJCeSbPJWzeIGsS0AT0ULaDasKWY/edit?usp=sharing"><li class="menuItem"><i class="fas fa-comments"></i> Feedback</li></a>
-            </ul>
+      <div class="sidebarMenu">
+        <div class="sidebarTitle">NoHate</div>
+        <ul class="menuList">
+          <a href="complain.html"
+            ><li class="menuItem">
+              <i class="fas fa-plus"></i> Report Hate
+            </li></a
+          >
+          <li class="menuItem">
+            <i class="fas fa-file-alt"></i> Report Status
+          </li>
+          <li class="menuItem"><i class="fas fa-book"></i> How to Use</li>
+          <a
+            href="https://docs.google.com/spreadsheets/d/11wBihCdlj7UbS4piJCeSbPJWzeIGsS0AT0ULaDasKWY/edit?usp=sharing"
+            ><li class="menuItem">
+              <i class="fas fa-comments"></i> Feedback
+            </li></a
+          >
+        </ul>
+      </div>
+      <div class="contentSection">
+        <div class="topNavbar">
+          <a href="/" id="dashboardh2"><h2>Home</h2></a>
+          <div class="navIcons">
+            <i class="fas fa-bell"></i>
+            <a href="/register.html"><i class="fas fa-user"></i></a>
+          </div>
         </div>
-        <div class="contentSection">
-            <div class="topNavbar">
-                <a href="/" id="dashboardh2"><h2>Home</h2></a>
-                <div class="navIcons">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <i class="fas fa-bell"></i>
-                    <a href="/register.html"><i class="fas fa-user"></i></a>
-                </div>
-            </div>
-            <div class="cardsContainer">
-                <div class="card">Total Reports: <strong>120</strong></div>
-                <div class="card">Resolved Cases: <strong>85</strong></div>
-                <div class="card">Pending Cases: <strong>35</strong></div>
-            </div>
+        <div class="cardsContainer">
+          <div class="card">
+            Total Reports:
+            <span id="reportCount">Loading...</span>
+          </div>
+          <div class="card">
+            Total Solved Cases: <span id="solvedCount">Loading...</span>
+          </div>
+          <div class="card">
+            Total Pending Cases: <span id="pendingCount">Loading...</span>
+          </div>
         </div>
+      </div>
     </div>
+
+    <!-- Scripting for Report load -->
+    <script>
+      const sheetUrl =
+        "https://docs.google.com/spreadsheets/d/e/2PACX-1vTI1c3S7F4lQBJ_OHCGRg9txKK60zhP71iASq2XfenFqKFYc_zHDrK_o_tXV5guwJW8feggZ6-rm2Qi/pub?output=csv";
+
+      function fetchReportCount() {
+        fetch(sheetUrl)
+          .then((response) => response.text())
+          .then((csv) => {
+            const rows = csv.trim().split("\n");
+            const reportCount = rows.length > 1 ? rows.length - 1 : 0;
+            document.getElementById("reportCount").textContent = reportCount;
+          })
+          .catch((error) => {
+            console.error("Error fetching CSV:", error);
+            document.getElementById("reportCount").textContent = "Error";
+          });
+      }
+
+      function fetchCaseStatus() {
+        const url = `${sheetUrl}&cacheBust=${Date.now()}`;
+
+        fetch(url)
+          .then((response) => response.text())
+          .then((csv) => {
+            const rows = csv.trim().split("\n").slice(1);
+            let solved = 0;
+            let pending = 0;
+
+            rows.forEach((row) => {
+              const columns = row.split(",");
+              const status = columns[columns.length - 1].trim().toLowerCase();
+              if (status === "solved") solved++;
+              else if (status === "pending") pending++;
+            });
+
+            document.getElementById("solvedCount").textContent = solved;
+            document.getElementById("pendingCount").textContent = pending;
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            document.getElementById("solvedCount").textContent = "Error";
+            document.getElementById("pendingCount").textContent = "Error";
+          });
+      }
+
+      // Load initially
+      fetchReportCount();
+      fetchCaseStatus();
+
+      // Auto-refresh every 30 seconds
+      setInterval(fetchReportCount, 3000);
+      setInterval(fetchCaseStatus, 3000);
+    </script>
   </body>
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
