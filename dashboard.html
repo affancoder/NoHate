@@ -35,9 +35,11 @@
               <i class="fas fa-plus"></i> Report Hate
             </li></a
           >
-          <li class="menuItem">
-            <i class="fas fa-file-alt"></i> Report Status
-          </li>
+          <a href="https://docs.google.com/spreadsheets/d/1xanPF3jkrkKOWt0e5MkXUVYMmaL77TRpOJZbFXOnviQ/edit?gid=0#gid=0">
+            <li class="menuItem">
+              <i class="fas fa-file-alt"></i> Report Status
+            </li>
+          </a>
           <li class="menuItem"><i class="fas fa-book"></i> How to Use</li>
           <a
             href="https://docs.google.com/spreadsheets/d/11wBihCdlj7UbS4piJCeSbPJWzeIGsS0AT0ULaDasKWY/edit?usp=sharing"
@@ -61,10 +63,10 @@
             <span id="reportCount">Loading...</span>
           </div>
           <div class="card">
-            Total Solved Cases: <span id="solvedCount">Loading...</span>
+            Solved Reports: <span id="solvedCount">Loading...</span>
           </div>
           <div class="card">
-            Total Pending Cases: <span id="pendingCount">Loading...</span>
+            Pending Reports: <span id="pendingCount">Loading...</span>
           </div>
         </div>
       </div>
@@ -90,18 +92,22 @@
       }
 
       function fetchCaseStatus() {
-        const url = `${sheetUrl}&cacheBust=${Date.now()}`;
-
-        fetch(url)
+        fetch(`${sheetUrl}&cacheBust=${Date.now()}`)
           .then((response) => response.text())
           .then((csv) => {
-            const rows = csv.trim().split("\n").slice(1);
+            const rows = csv.trim().split("\n").slice(1); // Remove header
             let solved = 0;
             let pending = 0;
 
             rows.forEach((row) => {
-              const columns = row.split(",");
-              const status = columns[columns.length - 1].trim().toLowerCase();
+              // Handle quoted commas by using regex split
+              const columns = row.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
+              if (!columns) return;
+
+              const status = columns[columns.length - 1]
+                .replace(/"/g, "")
+                .trim()
+                .toLowerCase();
               if (status === "solved") solved++;
               else if (status === "pending") pending++;
             });
@@ -120,9 +126,9 @@
       fetchReportCount();
       fetchCaseStatus();
 
-      // Auto-refresh every 30 seconds
-      setInterval(fetchReportCount, 3000);
-      setInterval(fetchCaseStatus, 3000);
+      // Refresh every 30 seconds
+      setInterval(fetchReportCount, 30000);
+      setInterval(fetchCaseStatus, 30000);
     </script>
   </body>
   <script
