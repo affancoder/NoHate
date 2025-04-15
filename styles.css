@@ -10,9 +10,9 @@ nav{
 }
 
 #logo {
-  width: 56px;
+  width: 54px;
   border-radius: 50%;
-  height: 50px !important;
+  height: 52px !important;
 }
 
 * {
@@ -1305,10 +1305,14 @@ body {
     font-size: 1.2rem;
   }
 
+  .aim-container{
+    padding: 14px;
+  }
+
   .aim-card {
     flex-direction: column;
-    text-align: center;
-    padding: 0;
+    /* text-align: center; */
+    padding: 10px;
   }
 
   .aim-section {
@@ -1338,6 +1342,11 @@ body {
     justify-content: center;
     width: 100%;
   }
+
+  #evolvedcard{
+    padding: 2px;
+  }
+  
 }
 
 /* Get Evolved */
@@ -2419,12 +2428,13 @@ body {
     width: 100%;
     padding: 0;
     margin: 20px 0;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .faq-section {
-    width: 95%;
-    padding: 15px;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
   }
 
   .faq-item {
@@ -2683,7 +2693,7 @@ body:hover .custom-cursor {
 @media (max-width: 768px) {
   .dashboardContainer {
     flex-direction: column;
-    overflow-y: scroll;
+    overflow-y: scroll !important;
   }
 
   .sidebarMenu {
@@ -2717,7 +2727,6 @@ body:hover .custom-cursor {
 
   .contentSection {
     margin-left: 0;
-    padding-top: 60px;
   }
 }
 
