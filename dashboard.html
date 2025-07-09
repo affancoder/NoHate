@@ -69,6 +69,31 @@
             Pending Reports: <span id="pendingCount"><strong>Loading...</strong></span>
           </div>
         </div>
+        
+        <!-- Simple Complaint Reports Table -->
+        <div class="tableContainer">
+          <h2 class="tableTitle">Recent Complaint Reports</h2>
+          <div class="tableWrapper">
+            <table id="complaintsTable" class="reportsTable">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Complaint Details</th>
+                  <th>Category</th>
+                  <th>Status</th>
+                  <th>Evidence</th>
+                </tr>
+              </thead>
+              <tbody id="complaintsTableBody">
+                <tr>
+                  <td colspan="7" class="loading-message">Loading complaint data...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -122,13 +147,185 @@
           });
       }
 
+      // Enhanced function to display complaint data with better parsing and formatting
+      function displayComplaintData() {
+        const tableBody = document.getElementById("complaintsTableBody");
+        tableBody.innerHTML = '<tr><td colspan="7" class="loading-message"><i class="fas fa-spinner fa-spin"></i> Loading complaint data...</td></tr>';
+        
+        fetch(`${sheetUrl}&cacheBust=${Date.now()}`)
+          .then(response => response.text())
+          .then(csv => {
+            const rows = csv.trim().split("\n");
+            if (rows.length <= 1) {
+              tableBody.innerHTML = '<tr><td colspan="7" class="loading-message">No complaint data available</td></tr>';
+              return;
+            }
+            
+            // Parse header to identify column positions
+            const header = parseCSVRow(rows[0]);
+            const dateIndex = header.findIndex(col => col.toLowerCase().includes('date'));
+            const nameIndex = header.findIndex(col => col.toLowerCase().includes('name'));
+            const emailIndex = header.findIndex(col => col.toLowerCase().includes('email'));
+            const detailsIndex = header.findIndex(col => col.toLowerCase().includes('detail') || col.toLowerCase().includes('complaint'));
+            const categoryIndex = header.findIndex(col => col.toLowerCase().includes('category'));
+            const statusIndex = header.findIndex(col => col.toLowerCase().includes('status'));
+            const evidenceIndex = header.findIndex(col => col.toLowerCase().includes('evidence') || col.toLowerCase().includes('link'));
+            
+            // Parse all data rows
+            const parsedRows = rows.slice(1).map(row => {
+              const columns = parseCSVRow(row);
+              return {
+                date: columns[dateIndex] || 'N/A',
+                name: columns[nameIndex] || 'N/A',
+                email: columns[emailIndex] || 'N/A',
+                details: columns[detailsIndex] || 'N/A',
+                category: columns[categoryIndex] || 'N/A',
+                status: columns[statusIndex] || 'N/A',
+                evidence: columns[evidenceIndex] || ''
+              };
+            });
+            
+            // Sort by date (newest first) if date column exists
+            if (dateIndex >= 0) {
+              parsedRows.sort((a, b) => {
+                // Try to parse dates, fallback to string comparison
+                try {
+                  const dateA = new Date(a.date);
+                  const dateB = new Date(b.date);
+                  return dateB - dateA; // Newest first
+                } catch (e) {
+                  return b.date.localeCompare(a.date);
+                }
+              });
+            }
+            
+            // Display only the 10 most recent entries
+            const recentRows = parsedRows.slice(0, 10);
+            
+            tableBody.innerHTML = '';
+            recentRows.forEach(row => {
+              const tr = document.createElement('tr');
+              
+              // Date cell with formatting
+              const dateCell = document.createElement('td');
+              dateCell.textContent = formatDate(row.date);
+              tr.appendChild(dateCell);
+              
+              // Name cell
+              const nameCell = document.createElement('td');
+              nameCell.textContent = row.name;
+              tr.appendChild(nameCell);
+              
+              // Email cell
+              const emailCell = document.createElement('td');
+              emailCell.textContent = row.email;
+              tr.appendChild(emailCell);
+              
+              // Details cell with truncation
+              const detailsCell = document.createElement('td');
+              detailsCell.className = 'details-cell';
+              detailsCell.title = row.details; // Show full text on hover
+              detailsCell.textContent = truncateText(row.details, 50);
+              tr.appendChild(detailsCell);
+              
+              // Category cell with formatting
+              const categoryCell = document.createElement('td');
+              categoryCell.textContent = formatCategory(row.category);
+              tr.appendChild(categoryCell);
+              
+              // Status cell with badge
+              const statusCell = document.createElement('td');
+              const statusBadge = document.createElement('span');
+              statusBadge.className = `status-badge status-${row.status.toLowerCase()}`;
+              statusBadge.textContent = row.status.charAt(0).toUpperCase() + row.status.slice(1).toLowerCase();
+              statusCell.appendChild(statusBadge);
+              tr.appendChild(statusCell);
+              
+              // Evidence cell with link
+              const evidenceCell = document.createElement('td');
+              if (row.evidence && row.evidence.includes('http')) {
+                const link = document.createElement('a');
+                link.href = row.evidence;
+                link.className = 'evidence-link';
+                link.target = '_blank';
+                link.innerHTML = '<i class="fas fa-external-link-alt"></i> View';
+                evidenceCell.appendChild(link);
+              } else {
+                evidenceCell.textContent = 'N/A';
+              }
+              tr.appendChild(evidenceCell);
+              
+              tableBody.appendChild(tr);
+            });
+          })
+          .catch(error => {
+            console.error("Error fetching complaint data:", error);
+            tableBody.innerHTML = '<tr><td colspan="7" class="loading-message">Error loading data</td></tr>';
+          });
+      }
+      
+      // Helper function to parse CSV rows properly (handles quoted values with commas)
+      function parseCSVRow(row) {
+        const result = [];
+        let insideQuotes = false;
+        let currentValue = '';
+        
+        for (let i = 0; i < row.length; i++) {
+          const char = row[i];
+          
+          if (char === '"') {
+            insideQuotes = !insideQuotes;
+          } else if (char === ',' && !insideQuotes) {
+            result.push(currentValue.trim().replace(/^"|"$/g, ''));
+            currentValue = '';
+          } else {
+            currentValue += char;
+          }
+        }
+        
+        // Don't forget the last value
+        result.push(currentValue.trim().replace(/^"|"$/g, ''));
+        return result;
+      }
+      
+      // Format date for better readability
+      function formatDate(dateStr) {
+        try {
+          const date = new Date(dateStr);
+          if (isNaN(date.getTime())) return dateStr; // Return original if invalid
+          return date.toLocaleDateString('en-US', { 
+            year: 'numeric', 
+            month: 'short', 
+            day: 'numeric' 
+          });
+        } catch (e) {
+          return dateStr; // Return original on error
+        }
+      }
+      
+      // Format category for better display
+      function formatCategory(category) {
+        if (!category) return 'N/A';
+        return category.split(' ').map(word => 
+          word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+        ).join(' ');
+      }
+      
+      // Truncate long text with ellipsis
+      function truncateText(text, maxLength) {
+        if (!text || text.length <= maxLength) return text;
+        return text.substring(0, maxLength) + '...';
+      }
+
       // Load initially
       fetchReportCount();
       fetchCaseStatus();
+      displayComplaintData();
 
       // Refresh every 30 seconds
       setInterval(fetchReportCount, 30000);
       setInterval(fetchCaseStatus, 30000);
+      setInterval(displayComplaintData, 30000);
     </script>
   </body>
   <script

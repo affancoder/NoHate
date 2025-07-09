@@ -2596,7 +2596,7 @@ body:hover .custom-cursor {
   display: flex;
   height: 100vh;
   background: #f4f7fc;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 #dashboardh2 {
@@ -2688,6 +2688,175 @@ body:hover .custom-cursor {
 .chartContainer canvas {
   max-width: 100%;
   height: auto;
+}
+
+/* Table Styling for Dashboard */
+.tableContainer {
+  margin-top: 30px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  scroll-behavior: smooth;
+  /* overflow-y: scroll !important; */
+}
+
+.tableContainer:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.tableTitle {
+  color: #004e89;
+  font-size: 26px;
+  margin-bottom: 25px;
+  font-weight: 600;
+  text-align: center;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.tableTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, #004e89, #0056b3);
+  border-radius: 3px;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05) inset;
+}
+
+.reportsTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.reportsTable th {
+  background: linear-gradient(135deg, #004e89, #0056b3);
+  color: white;
+  padding: 16px;
+  text-align: left;
+  font-weight: 500;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.reportsTable th:first-child {
+  border-top-left-radius: 8px;
+}
+
+.reportsTable th:last-child {
+  border-top-right-radius: 8px;
+}
+
+.reportsTable tr:nth-child(even) {
+  background-color: #f4f7fc;
+}
+
+.reportsTable tr:hover {
+  background-color: #e6f0ff;
+  transition: background-color 0.3s;
+}
+
+.reportsTable tr:last-child td:first-child {
+  border-bottom-left-radius: 8px;
+}
+
+.reportsTable tr:last-child td:last-child {
+  border-bottom-right-radius: 8px;
+}
+
+.reportsTable td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #e0e0e0;
+  transition: all 0.2s ease;
+}
+
+.loading-message {
+  text-align: center;
+  padding: 25px;
+  color: #666;
+  font-style: italic;
+  font-size: 16px;
+}
+
+.loading-message i {
+  margin-right: 8px;
+  color: #004e89;
+}
+
+.evidence-link {
+  color: #004e89;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  background-color: rgba(0, 78, 137, 0.1);
+}
+
+.evidence-link:hover {
+  background-color: rgba(0, 78, 137, 0.2);
+  transform: translateY(-2px);
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-block;
+  text-align: center;
+  min-width: 80px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.status-badge:hover {
+  transform: scale(1.05);
+}
+
+.status-pending {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+}
+
+.status-solved {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.details-cell {
+  max-width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: help;
+  transition: all 0.3s ease;
+}
+
+.details-cell:hover {
+  background-color: #f0f8ff;
 }
 
 @media (max-width: 768px) {
